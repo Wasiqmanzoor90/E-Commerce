@@ -1,0 +1,21 @@
+﻿<div style="height:90vh">
+
+<h2 class="text-center mb-3">User Profile</h2>
+<div class="card text-center " style="width: 30%; margin: auto;">
+    <div class="card-body">
+        <h5 class="card-title"><strong>Username:</strong> @ViewBag.UserName</h5>
+        <p class="card-text"><strong>Email:</strong> @ViewBag.UserEmail</p>
+        <p class="card-text"><strong>Role:</strong> @ViewBag.Role</p>
+    </div>
+</div>
+
+<!-- Centered buttons -->
+<div class="d-flex justify-content-center align-items-center mt-3">
+    <form asp-controller="User" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-success mx-2 mb-3">Logout</button> <br />
+        <a asp-controller="User" asp-action="Delete" class=" mx-2 mt-3">Delete Account</a>
+    </form> 
+   
+    @* <a asp-controller="User" asp-action="Edit" class="btn btn-success mx-2">Edit Profile</a> *@
+</div>
+</div>

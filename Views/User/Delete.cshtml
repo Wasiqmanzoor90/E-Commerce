@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Delete Account";
+}
+
+<h2>Are you sure you want to delete your account?</h2>
+<p>This action cannot be undone. Please enter your password to confirm.</p>
+
+<form asp-action="Delete" method="post" style="height:90vh" class="mt-5">
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Login" class="btn btn-secondary">Cancel</a>
+
+    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage as string))
+    {
+        <div class="alert alert-danger mt-3" role="alert">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+</form>

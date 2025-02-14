@@ -1,0 +1,36 @@
+﻿@model E_Commerce.Models.DomainModel.User
+@using E_Commerce.Types
+
+<form asp-action="Edit" method="post" style="height:90vh" class="mt-5">
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <small>Leave blank to keep the current password.</small>
+    </div>
+    <div>
+        <label>Role</label>
+        @* <select asp-for="Role" asp-items="Html.GetEnumSelectList<Role>()" class="form-control"></select> *@
+        <select asp-for="Role" asp-items="@(Html.GetEnumSelectList<Role>().Where(r => r.Text != nameof(Role.Admin)))" class="form-control"></select>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+
+    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage as string))
+    {
+        <div class="alert alert-danger mt-3" role="alert">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage as string))
+    {
+        <div class="alert alert-success mt-3" role="alert">
+            <p>@ViewBag.SuccessMessage</p>
+        </div>
+    }
+</form>
