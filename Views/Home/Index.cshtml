@@ -1,8 +1,108 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<div class="container py-5">
+    <div class="row text-center p-4" style="background-color: #fff0f5; border-radius: 20px;">
+        <!-- Winter Sale Section -->
+        <div class="col-12 col-md-6 mb-4">
+            <h1 class="fw-bold">
+                30% Off <span style="color: deeppink;">Winter Sale</span><br />Promo Code
+            </h1>
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+            <p class="fs-6" style= "font-family:'Roboto', sans-serif; font-size:16px; line-height:1.8; color:#555;">
+                This summer, our new collection <br />
+                will shelter you from the harsh elements <br />
+                of the world.
+            </p>
+            <button class="btn btn-primary px-4 py-2"
+                    style="background-color:deeppink; color:white; border-radius:15px;">
+                Shop Now
+            </button>
+        </div>
 
-<div class="text-center" style="height:90vh">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <!-- Promotional Images with Links -->
+        <div class="col-12 col-sm-6 mb-3">
+            <a asp-controller="User" asp-action="BuyerUi">
+                <img src="~/Img/Screenshot child.png" alt="Kids Bag" class="img-fluid rounded"
+                     style="filter: sepia(20%) brightness(100%) contrast(110%) saturate(120%);">
+            </a>
+        </div>
+        <div class="col-12 col-sm-6 mb-3">
+            <a asp-controller="User" asp-action="BuyerUi">
+                <img src="~/Img/Screenshot child2.png" alt="Kids Bag" class="img-fluid rounded"
+                     style="filter: sepia(20%) brightness(100%) contrast(110%) saturate(120%);">
+            </a>
+        </div>
+
+        <!-- Highlights Section -->
+        <div class="row justify-content-center g-4 mt-4">
+            <div class="col-6 col-md-3">
+                <div class="p-3 text-center" style="background-color:white; border-radius:15px;">
+                    <h4 class="fw-bold">#1</h4>
+                    <p class="fw-bold">eCommerce Platform</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 text-center" style="background-color:lightpink; border-radius:15px;">
+                    <h4 class="fw-bold">25k+</h4>
+                    <p class="fw-bold">Client Testimonials</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 text-center" style="background-color:white; border-radius:15px;">
+                    <h4 class="fw-bold">1 Million</h4>
+                    <p class="fw-bold">Real Customers & Buyers</p>
+                </div>
+              
+            </div>
+            <div class="container my-5">
+                <h2 class="text-center mb-5" style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px; color:#222;">
+                    Why Are We Leading in E-commerce?
+                </h2>
+
+                <div class="row g-5">
+                    <!-- Article 1: Trusted by Millions -->
+                    <div class="col-12">
+                        <div class="p-5 shadow rounded" style="background-color:#f9f9f9;">
+                            <h3 style="font-family:'Poppins', sans-serif; font-weight:600; font-size:28px; color:#222;">
+                                🌟 Trusted by Millions
+                            </h3>
+                            <p style="font-family:'Roboto', sans-serif; font-size:16px; line-height:1.8; color:#555;">
+                                Our platform is trusted by over 1 million customers worldwide. We ensure secure transactions, premium customer support, and a smooth shopping experience.
+                                Our commitment to excellence has earned us high ratings and thousands of positive reviews.
+                                With 24/7 customer support and a dedicated feedback system, we constantly improve to meet your expectations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Article 2: Fast & Reliable Delivery -->
+                    <div class="col-12">
+                        <div class="p-5 shadow rounded" style="background-color:#fdf2f8;">
+                            <h3 style="font-family:'Poppins', sans-serif; font-weight:600; font-size:28px; color:#222;">
+                                🚀 Fast & Reliable Delivery
+                            </h3>
+                            <p style="font-family:'Roboto', sans-serif; font-size:16px; line-height:1.8; color:#555;">
+                                Our logistics network ensures fast and reliable delivery. We have partnered with top delivery services to provide real-time tracking and on-time arrivals.
+                                Same-day delivery is available in select locations, and we offer free shipping on orders over $50.
+                                Additionally, our easy return policy ensures that your satisfaction is guaranteed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Article 3: Secure Payments -->
+                    <div class="col-12">
+                        <div class="p-5 shadow rounded" style="background-color:#f0f8ff;">
+                            <h3 style="font-family:'Poppins', sans-serif; font-weight:600; font-size:28px; color:#222;">
+                                💳 Secure Payments
+                            </h3>
+                            <p style="font-family:'Roboto', sans-serif; font-size:16px; line-height:1.8; color:#555;">
+                                We prioritize your security with encrypted payment gateways and multiple secure payment options, including credit cards, digital wallets, and cash on delivery.
+                                Our advanced fraud detection systems ensure your transactions are safe and protected.
+                                With end-to-end encryption and PCI DSS compliance, we guarantee that your sensitive information is never compromised.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>

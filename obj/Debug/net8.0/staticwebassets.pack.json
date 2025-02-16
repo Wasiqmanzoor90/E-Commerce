@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\E-Commerce.z2mgvzemsv.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child.png",
+      "PackagePath": "staticwebassets\\Img\\Screenshot child.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child2.png",
+      "PackagePath": "staticwebassets\\Img\\Screenshot child2.png"
+    },
+    {
       "Id": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

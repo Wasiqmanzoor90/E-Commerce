@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nESEsKb76i/ZPtpHUMTdFqvY0nhi9C9d/IHaLfP5jfo=",
+  "Hash": "SFjNMljhvBsbAwyRwfKFSiFZNniUOaLi8sJIGO27S/A=",
   "Source": "E-Commerce",
   "BasePath": "_content/E-Commerce",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "8ahyse93xi",
+      "Integrity": "AHC2kdWnr+4qRIubDN9mx4WZ7YTPaz/gWH5iIrVW+Bo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -99,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child.png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/Screenshot child#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6gxhwgp733",
+      "Integrity": "aowZUbyWzYbfhV6/DhohbdYf9CGWzO1SXrG6cqAENsI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Screenshot child.png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child2.png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/Screenshot child2#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wxpo1u6hmn",
+      "Integrity": "VBLJz79xenh0IHwYAjGIgXsePrZ04iksdNLQRN46cS0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Screenshot child2.png"
     },
     {
       "Identity": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\js\\site.js",
@@ -1321,7 +1363,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
+      "Route": "css/site.8ahyse93xi.css",
       "AssetFile": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1331,7 +1373,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "760"
         },
         {
           "Name": "Content-Type",
@@ -1339,11 +1381,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"AHC2kdWnr+4qRIubDN9mx4WZ7YTPaz/gWH5iIrVW+Bo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Feb 2025 10:02:35 GMT"
+          "Value": "Sat, 15 Feb 2025 08:12:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1353,7 +1395,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
+          "Value": "8ahyse93xi"
         },
         {
           "Name": "label",
@@ -1361,7 +1403,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-AHC2kdWnr+4qRIubDN9mx4WZ7YTPaz/gWH5iIrVW+Bo="
         }
       ]
     },
@@ -1376,7 +1418,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "760"
         },
         {
           "Name": "Content-Type",
@@ -1384,11 +1426,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"AHC2kdWnr+4qRIubDN9mx4WZ7YTPaz/gWH5iIrVW+Bo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Feb 2025 10:02:35 GMT"
+          "Value": "Sat, 15 Feb 2025 08:12:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1398,7 +1440,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-AHC2kdWnr+4qRIubDN9mx4WZ7YTPaz/gWH5iIrVW+Bo="
         }
       ]
     },
@@ -1645,6 +1687,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot child.6gxhwgp733.png",
+      "AssetFile": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "158828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aowZUbyWzYbfhV6/DhohbdYf9CGWzO1SXrG6cqAENsI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 07:16:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6gxhwgp733"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/Screenshot child.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aowZUbyWzYbfhV6/DhohbdYf9CGWzO1SXrG6cqAENsI="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot child.png",
+      "AssetFile": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "158828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aowZUbyWzYbfhV6/DhohbdYf9CGWzO1SXrG6cqAENsI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 07:16:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aowZUbyWzYbfhV6/DhohbdYf9CGWzO1SXrG6cqAENsI="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot child2.png",
+      "AssetFile": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "86515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VBLJz79xenh0IHwYAjGIgXsePrZ04iksdNLQRN46cS0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 07:38:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VBLJz79xenh0IHwYAjGIgXsePrZ04iksdNLQRN46cS0="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot child2.wxpo1u6hmn.png",
+      "AssetFile": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "86515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VBLJz79xenh0IHwYAjGIgXsePrZ04iksdNLQRN46cS0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 07:38:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wxpo1u6hmn"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/Screenshot child2.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VBLJz79xenh0IHwYAjGIgXsePrZ04iksdNLQRN46cS0="
         }
       ]
     },
