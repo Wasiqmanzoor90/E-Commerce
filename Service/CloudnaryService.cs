@@ -4,24 +4,25 @@ using E_Commerce.Interface;
 
 namespace E_Commerce.Service
 {
-    public class CloudnaryService : CloudinaryInterface
+    public class CloudnaryService : ICloudinaryInterface
     {
         private readonly Cloudinary _cloudinary;
 
         public CloudnaryService(IConfiguration configuration)
         {
+            var cloudinaryurl = configuration["Cloudinary:CLOUDINARY_URL"];
 
-            var cloudinaryurl = configuration["CLOUDINARY_URL"];
             if (!string.IsNullOrEmpty(cloudinaryurl))
             {
-                var account = new Account(cloudinaryurl);
-                _cloudinary = new Cloudinary(account);
+                // Use Cloudinary constructor with URL directly (no Account needed)
+                _cloudinary = new Cloudinary(cloudinaryurl);
             }
             else
             {
                 throw new Exception("Cloudinary configuration is missing.");
             }
         }
+        
 
         public async Task<string> UploadImageAsync(IFormFile file)
         {

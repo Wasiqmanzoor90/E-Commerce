@@ -18,6 +18,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddDbContext<SqldbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
 builder.Services.AddScoped<IJasonToken, JasonTokenServicecs>();
+builder.Services.AddScoped<ICloudinaryInterface, CloudnaryService>();
 
 var app = builder.Build();
 

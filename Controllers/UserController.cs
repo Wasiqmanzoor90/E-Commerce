@@ -1,4 +1,5 @@
-﻿using E_Commerce.Data;
+﻿using CloudinaryDotNet.Actions;
+using E_Commerce.Data;
 using E_Commerce.Interface;
 using E_Commerce.Models.DomainModel;
 using E_Commerce.Models.ViewModel;
@@ -114,9 +115,14 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
                 SameSite = SameSiteMode.Strict,
                 Expires = DateTime.UtcNow.AddHours(10)
             });
+            ViewBag.successMessage = "Login successful";
+            return finduser.Role switch
+            {
+                Types.Role.Admin => RedirectToAction("AdminConsole"),
+                Types.Role.Seller => RedirectToAction("SellerUi", "Product"),
+                _ => RedirectToAction("BuyerUi")
+            };
 
-            ViewBag.successMessage = "Login sucessfull";
-            return View();
         }
 
         catch (Exception ex)
@@ -319,9 +325,10 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
             {
                 return RedirectToAction("BuyerUi","User");
             }
+        
             else
             {
-                return RedirectToAction("Index1"); // Redirect Seller to Index1
+                return RedirectToAction("SellerUi","Product"); // Redirect Seller to Index1
             }
 
               }
@@ -335,7 +342,7 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
 
 
     [HttpGet]
-    public async Task <IActionResult> BuyerUi()
+    public async Task <IActionResult> BuyerUi(Product product)
     {
         var token = Request.Cookies["TestToken"];
       if(string.IsNullOrEmpty(token))
@@ -353,7 +360,10 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
             return RedirectToAction("Index", "Home");   
         }
 
-        return View();
+        // Retrieve all products with quantity greater than zero
+        var products = await _dbcontext.Products.Where(p => p.ProductQuantity > 0).ToListAsync();
+        return View(products);
+
     }
 
 
@@ -377,7 +387,7 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         }
         else
         {
-            return RedirectToAction("Adminconsole", "User");
+            return View();
         }
        
     }

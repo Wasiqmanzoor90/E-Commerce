@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RYx1mz/Iyag=",
+  "dgSpecHash": "IaT5AIgZ0os=",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\OneDrive\\Dotnet projects\\E-Commerce\\E-Commerce.csproj",
+  "projectFilePath": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\E-Commerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
