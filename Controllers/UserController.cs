@@ -392,7 +392,7 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
        
     }
 
-    [HttpPost]
+    [HttpPost]   
     public async Task <IActionResult> Adminconsole(User user, Product product)
     {
         var token = Request.Cookies["TestToken"];
@@ -416,7 +416,33 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         }
 
     }
+
+
+    [HttpGet]
+    public async Task<IActionResult> ProductDetail(Guid ProductId)
+    {
+        var token = Request.Cookies["TestToken"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        var userid = _jtoken.VerifyToken(token);
+        if (userid == Guid.Empty)
+        {
+            return View();
+        }
+
+        var prod = await _dbcontext.Products.FindAsync(ProductId);
+        if (prod == null)
+        {
+            return NotFound();
+        }
+        return View(prod);
+    }
 }
+
+
+
 
 
 
