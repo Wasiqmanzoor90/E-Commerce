@@ -15,10 +15,16 @@
                                 <h5 class="card-title">@product.ProductName</h5>
                                 <p class="card-text text-muted">@product.ProductDescription</p>
                                 <p class="card-text"><strong>Price:</strong> $@product.ProductPrice</p>
-                                <p class="card-text"><strong>Available Quantity:</strong> @product.ProductQuantity</p>
+                              
                             </div>
                         </div>
                     </a>
+                      <form method="post" asp-action="CartUi" asp-controller="Cart" asp-route-id="@product.ProductId">
+                                    <div class="input-group mb-2">
+                                        <input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="@product.ProductQuantity" required>
+                                        <button type="submit" class="btn btn-success">Add to Cart</button>
+                                    </div>
+                                </form>
                 </div>
             }
         }

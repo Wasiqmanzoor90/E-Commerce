@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commerce.Migrations
 {
     [DbContext(typeof(SqldbContext))]
-    [Migration("20250209145247_Sett")]
-    partial class Sett
+    [Migration("20250220114733_Fix")]
+    partial class Fix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace E_Commerce.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("E_Commerce.Models.Adress", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Adress", b =>
                 {
                     b.Property<Guid>("AdressId")
                         .ValueGeneratedOnAdd()
@@ -72,7 +72,7 @@ namespace E_Commerce.Migrations
                     b.ToTable("Adresses");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Cart", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Cart", b =>
                 {
                     b.Property<Guid>("CartId")
                         .ValueGeneratedOnAdd()
@@ -95,7 +95,7 @@ namespace E_Commerce.Migrations
                     b.ToTable("Carts");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.CartItem", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.CartItem", b =>
                 {
                     b.Property<Guid>("CartItemId")
                         .ValueGeneratedOnAdd()
@@ -122,7 +122,7 @@ namespace E_Commerce.Migrations
                     b.ToTable("CartItems");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Order", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Order", b =>
                 {
                     b.Property<Guid>("OrderId")
                         .ValueGeneratedOnAdd()
@@ -155,7 +155,7 @@ namespace E_Commerce.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Product", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Product", b =>
                 {
                     b.Property<Guid>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -188,7 +188,7 @@ namespace E_Commerce.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Review", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Review", b =>
                 {
                     b.Property<Guid>("ReviewId")
                         .ValueGeneratedOnAdd()
@@ -210,7 +210,7 @@ namespace E_Commerce.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.User", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.User", b =>
                 {
                     b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
@@ -239,9 +239,9 @@ namespace E_Commerce.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Adress", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Adress", b =>
                 {
-                    b.HasOne("E_Commerce.Models.User", "user")
+                    b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithMany("Adresses")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -250,26 +250,26 @@ namespace E_Commerce.Migrations
                     b.Navigation("user");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Cart", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Cart", b =>
                 {
-                    b.HasOne("E_Commerce.Models.User", "user")
+                    b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithOne("Cart")
-                        .HasForeignKey("E_Commerce.Models.Cart", "UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .HasForeignKey("E_Commerce.Models.DomainModel.Cart", "UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("user");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.CartItem", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.CartItem", b =>
                 {
-                    b.HasOne("E_Commerce.Models.Cart", "Cart")
+                    b.HasOne("E_Commerce.Models.DomainModel.Cart", "Cart")
                         .WithMany("CartItems")
                         .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("E_Commerce.Models.Product", "Product")
+                    b.HasOne("E_Commerce.Models.DomainModel.Product", "Product")
                         .WithMany("CartItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -280,18 +280,18 @@ namespace E_Commerce.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Order", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Order", b =>
                 {
-                    b.HasOne("E_Commerce.Models.Cart", "cart")
+                    b.HasOne("E_Commerce.Models.DomainModel.Cart", "cart")
                         .WithMany("Orders")
                         .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("E_Commerce.Models.User", "user")
+                    b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("cart");
@@ -299,9 +299,9 @@ namespace E_Commerce.Migrations
                     b.Navigation("user");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Product", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Product", b =>
                 {
-                    b.HasOne("E_Commerce.Models.User", "Seller")
+                    b.HasOne("E_Commerce.Models.DomainModel.User", "Seller")
                         .WithMany("Products")
                         .HasForeignKey("SellerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -310,9 +310,9 @@ namespace E_Commerce.Migrations
                     b.Navigation("Seller");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Review", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Review", b =>
                 {
-                    b.HasOne("E_Commerce.Models.User", "user")
+                    b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -321,19 +321,19 @@ namespace E_Commerce.Migrations
                     b.Navigation("user");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Cart", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Cart", b =>
                 {
                     b.Navigation("CartItems");
 
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.Product", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Product", b =>
                 {
                     b.Navigation("CartItems");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.User", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.User", b =>
                 {
                     b.Navigation("Adresses");
 

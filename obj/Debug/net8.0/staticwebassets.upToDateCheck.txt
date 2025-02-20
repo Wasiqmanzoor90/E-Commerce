@@ -1,5 +1,8 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\Img\Screenshot (38).png
+wwwroot\Img\Screenshot (39).png
+wwwroot\Img\Screenshot (40).png
 wwwroot\Img\Screenshot child.png
 wwwroot\Img\Screenshot child2.png
 wwwroot\js\site.js

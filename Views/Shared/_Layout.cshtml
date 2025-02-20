@@ -14,21 +14,20 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: #fff0f5; font-family: 'Poppins', sans-serif; font-size: 14px;">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg" style="font-family: 'Poppins', sans-serif; font-size: 14px;">
             <div class="container-fluid">
-                <!-- Hamburger Toggler -->
-              
 
+                <!-- Hamburger Menu -->
                 <button class="navbar-toggler border border-white p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="text-black fs-4">☰</span> <!-- Custom Hamburger Menu -->
                 </button>
 
-
                 <!-- Logo -->
                 <div class="mx-auto text-center">
                     <a class="navbar-brand fw-bold text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                        <img src="https://w7.pngwing.com/pngs/384/470/png-transparent-retail-computer-icons-e-commerce-sales-mega-offer-miscellaneous-service-logo.png"
+                        <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png"
                              alt="Logo" style="width: 35px; height: auto;">
                         Shopify
                     </a>
@@ -41,20 +40,20 @@
                             <a class="nav-link text-dark nav-hover" asp-controller="Home" asp-action="Index"> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark nav-hover" asp-controller= "Home"asp-action="Index"> About</a>
+                            <a class="nav-link text-dark nav-hover" asp-controller="Home" asp-action="Index"> About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark nav-hover" asp-controller="Home" asp-action="Privacy"> Privacy</a>
                         </li>
                     </ul>
 
-                    <!-- Switch Role / Login Button -->
+                    <!-- Role Switching / Login & Cart Button -->
                     @{
                         var token = Context.Request.Cookies["TestToken"];
                         var role = Context.Request.Cookies["Role"];
                     }
 
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav align-items-center">
                         @if (!string.IsNullOrEmpty(token))
                         {
                             <li class="nav-item">
@@ -69,12 +68,38 @@
                                     }
                                 </a>
                             </li>
+
+                            @if (role == "Buyer")
+                            {
+                                <!-- Cart Icon (Only for Buyers) -->
+                                <li class="nav-item ms-3">
+                                    <a class="btn btn-outline-dark position-relative" asp-controller="Cart" asp-action="CartUi">
+                                        🛒 Cart
+                                    </a>
+                                </li>
+                            }
+
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="rounded-circle" width="30" height="30">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                    <li><a class="dropdown-item" asp-controller="User" asp-action="UserProfile">Profile</a></li>
+                                    <li>
+                                        <form method="post" asp-controller="User" asp-action="Logout">
+                                            <button type="submit" class="dropdown-item">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+
+                            </li>
                         }
                         else
                         {
                             <li class="nav-item">
                                 <a class="btn btn-sm btn-outline-primary px-3" asp-controller="User" asp-action="Login">
-                                    🔑 Login
+                                    Login
                                 </a>
                             </li>
                         }
@@ -82,6 +107,7 @@
                 </div>
             </div>
         </nav>
+
 
         <style>
             /* Navbar Hover Effect */
@@ -114,22 +140,42 @@
         </style>
 
     </header>
-    <body style="background-color: #fff0f5;">
+    <main role="main" class="pb-3">
         <div class="container-fluid">
             @RenderBody()
         </div>
-    </body>
+    </main>
 
 
-    <footer class="border-top footer text-muted py-3" style="background-color: white;">
-        <div class="container d-flex flex-column align-items-center">
-            <!-- Copyright -->
-            <div class=""mt-4>
-                &copy; 2025 - E_Commerce -
-                <a class="text-decoration-none text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
+<footer class="footer bg-dark text-white py-5">
+    <div class="container text-center">
+        <!-- Logo or Site Name -->
+        <h4 class="mb-3">E-Commerce</h4>
+
+        <!-- Links -->
+        <div class="mb-3">
+            <a class="text-decoration-none text-light mx-2" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+            <a class="text-decoration-none text-light mx-2" href="#">Terms of Service</a>
+            <a class="text-decoration-none text-light mx-2" href="#">Contact Us</a>
         </div>
-    </footer>
+
+        <!-- Social Media Icons -->
+        <div class="mb-3">
+            <a href="#" class="text-light mx-2"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="text-light mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="text-light mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-light mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+
+        <!-- Copyright -->
+        <div>
+            &copy; 2025 - <strong>E-Commerce</strong>. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- FontAwesome for icons (Include in <head> or before </body>) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -137,4 +183,8 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+
 </html>
+
+

@@ -252,7 +252,7 @@ namespace E_Commerce.Migrations
                     b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithOne("Cart")
                         .HasForeignKey("E_Commerce.Models.DomainModel.Cart", "UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("user");
@@ -282,13 +282,13 @@ namespace E_Commerce.Migrations
                     b.HasOne("E_Commerce.Models.DomainModel.Cart", "cart")
                         .WithMany("Orders")
                         .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("cart");

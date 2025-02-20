@@ -345,10 +345,10 @@ C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\staticwe
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.E-Commerce.props
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.E-Commerce.props
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\E-Commerce.csproj.Up2Date
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\E-Commerce.dll
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\refint\E-Commerce.dll
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\E-Commerce.pdb
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\E-Commerce.genruntimeconfig.cache
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\ref\E-Commerce.dll
+C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

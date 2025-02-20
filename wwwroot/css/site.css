@@ -1,6 +1,4 @@
-html {
-  font-size: 14px;
-}
+
 
 @media (min-width: 768px) {
   html {
@@ -41,3 +39,62 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+/* Ensure Full Page Height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Wrapper for Content */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Expands Main Content to Push Footer Down */
+.main-content {
+    flex: 1;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #f8f9fa; /* Matches Navbar */
+    color: #212529; /* Dark text for contrast */
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    /* Footer Links */
+    .footer a {
+        color: #212529;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+        .footer a:hover {
+            color: #007bff; /* Matches Bootstrap primary color */
+        }
+
+    /* Social Media Icons */
+    .footer .social-icons a {
+        color: #212529;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+        .footer .social-icons a:hover {
+            color: #007bff; /* Highlight effect */
+        }
+
+    /* Ensure Icons Use Original Colors */
+    .footer .social-icons i {
+        font-size: 24px;
+    }
+
