@@ -20,9 +20,21 @@
             <form method="post" asp-action="CartUi" asp-controller="Cart" asp-route-id="@Model.ProductId">
                 <div class="input-group mb-2">
                     <input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="@Model.ProductQuantity" required>
-                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                    <button class="btn-cart">Add to Cart</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<style>
+    .btn-cart {
+        background-color: black;
+        color: white;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+    }
+</style>

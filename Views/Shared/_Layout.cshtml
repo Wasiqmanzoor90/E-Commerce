@@ -26,10 +26,10 @@
 
                 <!-- Logo -->
                 <div class="mx-auto text-center">
-                    <a class="navbar-brand fw-bold text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png"
-                             alt="Logo" style="width: 35px; height: auto;">
-                        Shopify
+                    <a class="navbar-brand fw-bold text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="font-family:'Playfair Display', serif">
+                        <img src="~/Img/kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png"
+                             alt="Logo" style="width: 100px; height: auto;">
+                        Urban Vogue
                     </a>
                 </div>
 
@@ -57,7 +57,8 @@
                         @if (!string.IsNullOrEmpty(token))
                         {
                             <li class="nav-item">
-                                <a class="btn btn-sm btn-primary px-3" asp-controller="User" asp-action="Changerole">
+                             
+                                    <a class="btn btn-outline-dark position-relative" asp-controller="User" asp-action="Changerole">
                                     @if (role == "Buyer")
                                     {
                                         <span> Switch to Seller</span>
@@ -82,7 +83,7 @@
 
                             <li class="nav-item dropdown ms-3">
                                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="rounded-circle" width="30" height="30">
+                                    <img src="https://photosking.net/wp-content/uploads/2024/05/no-dp_16.webp" alt="Profile" class="rounded-circle" width="30" height="30">
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                                     <li><a class="dropdown-item" asp-controller="User" asp-action="UserProfile">Profile</a></li>
@@ -147,24 +148,24 @@
     </main>
 
 
-<footer class="footer bg-dark text-white py-5">
+    <footer class="footer text-dark py-5" style="background-color:lightgray;">
     <div class="container text-center">
         <!-- Logo or Site Name -->
         <h4 class="mb-3">E-Commerce</h4>
 
         <!-- Links -->
         <div class="mb-3">
-            <a class="text-decoration-none text-light mx-2" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
-            <a class="text-decoration-none text-light mx-2" href="#">Terms of Service</a>
-            <a class="text-decoration-none text-light mx-2" href="#">Contact Us</a>
+            <a class="text-decoration-none text-dark mx-2" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                <a class="text-decoration-none text-dark mx-2" href="#">Terms of Service</a>
+                <a class="text-decoration-none text-dark mx-2" href="#">Contact Us</a>
         </div>
 
         <!-- Social Media Icons -->
         <div class="mb-3">
-            <a href="#" class="text-light mx-2"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="#" class="text-light mx-2"><i class="fab fa-twitter fa-lg"></i></a>
-            <a href="#" class="text-light mx-2"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="text-light mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
         </div>
 
         <!-- Copyright -->

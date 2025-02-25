@@ -1,5 +1,6 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\Img\kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png
 wwwroot\Img\Screenshot (38).png
 wwwroot\Img\Screenshot (39).png
 wwwroot\Img\Screenshot (40).png

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2eVH5Wm0wE0MnkRynJGw5JGWR944k3Sd4H7eFuCqZR8=",
+  "Hash": "3peW9N4opz9NLZkVNxAYS/srTucaULNzj/NU+//pK1A=",
   "Source": "E-Commerce",
   "BasePath": "_content/E-Commerce",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "st0ysrzn1f",
+      "Integrity": "sBB5XHQ+V1dImnZDvvL7FkSDa1gS7664gdIsAK3YxYg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png"
     },
     {
       "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (38).png",
@@ -1750,6 +1771,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "Img/kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "117347"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sBB5XHQ+V1dImnZDvvL7FkSDa1gS7664gdIsAK3YxYg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Feb 2025 05:39:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sBB5XHQ+V1dImnZDvvL7FkSDa1gS7664gdIsAK3YxYg="
+        }
+      ]
+    },
+    {
+      "Route": "Img/kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.st0ysrzn1f.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "117347"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sBB5XHQ+V1dImnZDvvL7FkSDa1gS7664gdIsAK3YxYg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Feb 2025 05:39:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "st0ysrzn1f"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sBB5XHQ+V1dImnZDvvL7FkSDa1gS7664gdIsAK3YxYg="
         }
       ]
     },

@@ -56,6 +56,7 @@ namespace E_Commerce.Controllers
                 return NotFound();
             }
 
+            // Fetch the user's cart
             var cart = await _dbcontext.Carts
                 .Include(c => c.CartItems)
                 .FirstOrDefaultAsync(c => c.UserId == userId);
@@ -66,11 +67,15 @@ namespace E_Commerce.Controllers
                 {
                     CartId = Guid.NewGuid(),
                     UserId = userId,
-                    CartItems = new List<CartItem>()
+                    CartItems = new List<CartItem>(),
+                    Totalprice = 0,  // Initialize total price
+                    CartQuantity = 0 // Initialize total quantity
                 };
                 _dbcontext.Carts.Add(cart);
+                await _dbcontext.SaveChangesAsync(); // ✅ Save cart before adding items
             }
 
+            // Fetch the product
             var product = await _dbcontext.Products.FindAsync(id);
             if (product == null || product.ProductQuantity < quantity)
             {
@@ -85,16 +90,19 @@ namespace E_Commerce.Controllers
             {
                 if (_dbcontext.Entry(cartItem).State == EntityState.Deleted)
                 {
-                    _dbcontext.Entry(cartItem).State = EntityState.Detached; // Detach the deleted entity
+                    _dbcontext.Entry(cartItem).State = EntityState.Modified; // ✅ Reattach deleted item
                 }
 
+                // Update the quantity and total price
                 cartItem.Quantity += quantity;
                 cartItem.Price = cartItem.Quantity * product.ProductPrice;
-                _dbcontext.CartItems.Update(cartItem);
+
+                _dbcontext.Entry(cartItem).State = EntityState.Modified; // ✅ Ensure changes are tracked
             }
             else
             {
-                var newCartItem = new CartItem
+                // If the item does not exist, create a new one
+                cartItem = new CartItem
                 {
                     CartItemId = Guid.NewGuid(),
                     CartId = cart.CartId,
@@ -103,10 +111,19 @@ namespace E_Commerce.Controllers
                     Price = quantity * product.ProductPrice
                 };
 
-                _dbcontext.CartItems.Add(newCartItem);
+                _dbcontext.CartItems.Add(cartItem);
             }
 
+            // ✅ Update Cart Total Price & Quantity
+            cart.Totalprice = cart.CartItems.Sum(ci => ci.Price);
+            cart.CartQuantity = cart.CartItems.Sum(ci => ci.Quantity);
+
+            _dbcontext.Carts.Update(cart); // Update cart
+
+            // ✅ Save changes to the database
             await _dbcontext.SaveChangesAsync();
+
+            // ✅ Redirect to Cart UI after saving
             return RedirectToAction("CartUi", "Cart");
         }
 
