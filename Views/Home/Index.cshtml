@@ -1,0 +1,229 @@
+﻿<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+    /* Product Section */
+    .products-section {
+        background: #ffffff;
+        padding: 60px 0;
+    }
+
+    /* Ensure Cards Have Equal Height */
+    .info-box {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 380px; /* Equal height for all */
+    }
+
+    /* Product Image */
+    .product-img {
+        max-height: 200px; /* Prevent stretching */
+        width: auto;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    /* Product Title */
+    .info-box h4 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+
+
+   
+    /* Add to Cart Button */
+    .btn-cart {
+        background-color: black;
+        color: white;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+       
+    }
+
+   
+
+  </style>
+
+<div class="container-fluid py-5 promo-container">
+    <div class="container">
+        <h1>30% Off <span style="color: dimgrey;">Winter Sale</span> Promo Code</h1>
+        <p>This summer, our new collection will shelter you from the harsh elements of the world.</p>
+        <form method="get" asp-action="BuyerUi" asp-controller="User">
+            <button class="btn btn-dark" style="border-radius:15px">Shop Now</button>
+        </form>
+    </div>
+</div>
+
+
+@{
+    var token = Context.Request.Cookies["TestToken"];
+    var role = Context.Request.Cookies["Role"];
+}
+<div class="container-fluid products-section">
+    <h2 class="text-center mb-5">Featured Products</h2>
+    <div class="row g-4 text-center">
+
+   
+
+        <!-- Product 1 -->
+        <div class="col-md-4">
+            <div class="info-box">
+                <img src="~/Img/Screenshot (40).png" alt="Product 1" class="img-fluid product-img">
+                <h4>Levis Men Mid Rise Baggy Fit Relaxed Jeans Baggy</h4>
+                <p>$39.99</p>
+
+                @if (!string.IsNullOrEmpty(token) && role == "Buyer")
+                {
+                    <form asp-controller="User" asp-action="BuyerUi" method="get">
+                        <button class="btn-cart">Add to Cart</button>
+                    </form>
+                }
+                else
+                {
+                    <button class="btn-cart disabled" onclick="redirectToLogin()">Add to Cart</button>
+                }
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-md-4">
+            <div class="info-box">
+                <img src="~/Img/Screenshot (38).png" alt="Product 2" class="img-fluid product-img">
+                <h4>Zara Leather Jacket</h4>
+                <p>$39.99</p>
+
+                @if (!string.IsNullOrEmpty(token) && role == "Buyer")
+                {
+                    <form asp-controller="User" asp-action="BuyerUi" method="get">
+                        <button class="btn-cart">Add to Cart</button>
+                    </form>
+                }
+                else
+                {
+                    <button class="btn-cart disabled" onclick="redirectToLogin()">Add to Cart</button>
+                }
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-md-4">
+            <div class="info-box">
+                <img src="~/Img/Screenshot (39).png" alt="Product 3" class="img-fluid product-img">
+                <h4>H&M Puffer Jacket</h4>
+                <p>$49.99</p>
+
+
+                @if (!string.IsNullOrEmpty(token) && role == "Buyer")
+                {
+                    <form asp-controller="User" asp-action="BuyerUi" method="get">
+                    <button class="btn-cart">Add to Cart</button>
+                    </form>
+                }
+                else
+                {
+                    <button class="btn-cart disabled" onclick="redirectToLogin()">Add to Cart</button>
+                }
+
+            </div>
+        </div>
+
+
+
+
+        <div class="container why-us">
+    <h2 class="text-center mb-5">Why Are We Leading in E-commerce?</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="info-box">
+                <h3>🌟 Trusted by Millions</h3>
+                <p>We ensure secure transactions, premium customer support, and a smooth shopping experience.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-box"  >
+                <h3>🚀 Fast & Reliable Delivery</h3>
+                <p>Our logistics network ensures fast and reliable delivery with real-time tracking.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-box" >
+                <h3>💳 Secure Payments</h3>
+                <p>Encrypted payment gateways ensure your transactions are safe and protected.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container my-5">
+    <div class="row text-center g-4 " >
+        <div class="col-md-4">
+            <div class="highlight-box p-2" style="background-color:lightgray; border-radius:10px">
+                <h4 class="fw-bold">#1</h4>
+                <p>eCommerce Platform</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="highlight-box p-2" style="background: lightgray; border-radius:10px">
+                <h4 class="fw-bold">25k+</h4>
+                <p>Client Testimonials</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="highlight-box p-2" style="background-color:lightgray; border-radius:10px">
+                <h4 class="fw-bold">1 Million</h4>
+                <p>Real Customers & Buyers</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-light py-5">
+    <h2 class="text-center mb-4">What Our Customers Say</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+        <div class="" style="background-color:white; padding :20px; height:250px">
+                <p>"Amazing service! Fast delivery and quality products. Highly recommended!"</p>
+                <h6>- John Doe</h6>
+                    </div>
+                </div>
+        <div class="col-md-4">
+                    <div class="" style="background-color:white; padding :20px; height:250px">
+                        <p>"Best eCommerce experience ever. The customer support is top-notch!"</p>
+                <h6>- Jane Smith</h6>
+            </div>
+        </div>
+        <div class="col-md-4">
+                    <div class="" style="background-color:white; padding :20px; height:250px">
+                        <p>"Fantastic deals and smooth transactions. I'll be back for more!"</p>
+                <h6>- Robert Lee</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <script>
+            function redirectToLogin() {
+                window.location.href = '/User/Login';
+            }
+        </script>

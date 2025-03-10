@@ -1,0 +1,40 @@
+﻿@model E_Commerce.Models.DomainModel.Product
+
+<div class="container mt-4">
+    <h2 class="mb-4">Product Details</h2>
+
+    <div class="row mb-4 align-items-center border rounded shadow-sm p-3 bg-white">
+        <!-- Product Image -->
+        <div class="col-md-5">
+            <img src="@Model.ProductPicUrl" class="img-fluid rounded" alt="@Model.ProductName"
+                 style="height: 100%; max-height: 300px; object-fit: cover; width: 100%;">
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-7">
+            <h4 class="fw-bold">@Model.ProductName</h4>
+            <p class="text-muted">@Model.ProductDescription</p>
+            <p><strong>Price:</strong> $@Model.ProductPrice</p>
+            <p><strong>Available Quantity:</strong> @Model.ProductQuantity</p>
+
+            <form method="post" asp-action="CartUi" asp-controller="Cart" asp-route-id="@Model.ProductId">
+                <div class="input-group mb-2">
+                    <input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="@Model.ProductQuantity" required>
+                    <button class="btn-cart">Add to Cart</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-cart {
+        background-color: black;
+        color: white;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+    }
+</style>

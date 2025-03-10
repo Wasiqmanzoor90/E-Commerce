@@ -1,0 +1,38 @@
+﻿@model E_Commerce.Models.DomainModel.Cart
+
+<div class="container mt-4">
+    <h2 class="mb-3">Your Cart</h2>
+
+    @if (Model?.CartItems != null && Model.CartItems.Any())
+    {
+        <div class="row">
+            @foreach (var item in Model.CartItems)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card shadow-sm">
+                        <img src="@item.Product.ProductPicUrl" class="card-img-top" alt="@item.Product.ProductName"
+                             style="height: 200px; object-fit: cover;">
+
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Product.ProductName</h5>
+                            <p class="card-text"><strong>Quantity:</strong> @item.Quantity</p>
+                            <p class="card-text"><strong>Price:</strong> $@item.Price</p>
+
+                            <form method="post" asp-action="RemoveItem" asp-controller="Cart" asp-route-id="@item.CartItemId">
+                                <button type="submit" class="btn btn-danger btn-sm w-100">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-end mt-3">
+            <h4><strong>Total: $@(Model.CartItems.Sum(i => i.Price))</strong></h4>
+        </div>
+    }
+    else
+    {
+        <p class="text-muted">Your cart is empty.</p>
+    }
+</div>

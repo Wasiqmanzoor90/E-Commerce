@@ -1,0 +1,50 @@
+﻿@model IEnumerable<E_Commerce.Models.DomainModel.Product>
+
+<div class="container mt-4">
+    <h2>Available Products</h2>
+    <div class="row">
+        @if (Model != null && Model.Any()) // ✅ Fix: Check if Model is a collection
+        {
+            @foreach (var product in Model) // ✅ Fix: Loop through collection
+            {
+                <div class="col-md-4 mb-4">
+                    <a asp-controller="User" asp-action="ProductDetail" asp-route-ProductId="@product.ProductId" class="text-decoration-none text-dark">
+                        <div class="card shadow-sm">
+                            <img src="@product.ProductPicUrl" class="card-img-top" alt="@product.ProductName" style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.ProductName</h5>
+                                <p class="card-text text-muted">@product.ProductDescription</p>
+                                <p class="card-text"><strong>Price:</strong> $@product.ProductPrice</p>
+                              
+                            </div>
+                        </div>
+                    </a>
+                      <form method="post" asp-action="CartUi" asp-controller="Cart" asp-route-id="@product.ProductId">
+                                    <div class="input-group mb-2">
+                                        <input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="@product.ProductQuantity" required>
+                            <button class="btn-cart">Add to Cart</button>
+                                    </div>
+                                </form>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No products available.</p>
+
+         
+        }
+    </div>
+</div>
+
+<style>
+    .btn-cart {
+        background-color: black;
+        color: white;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+    }
+</style>

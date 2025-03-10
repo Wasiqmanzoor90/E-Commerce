@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - E_Commerce</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/E_Commerce.styles.css" asp-append-version="true" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg" style="font-family: 'Poppins', sans-serif; font-size: 14px;">
+            <div class="container-fluid">
+
+                <!-- Hamburger Menu -->
+                <button class="navbar-toggler border border-white p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="text-black fs-4">☰</span> <!-- Custom Hamburger Menu -->
+                </button>
+
+                <!-- Logo -->
+                <div class="mx-auto text-center">
+                    <a class="navbar-brand fw-bold text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="font-family:'Playfair Display', serif">
+                        <img src="~/Img/kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png"
+                             alt="Logo" style="width: 100px; height: auto;">
+                        Urban Vogue
+                    </a>
+                </div>
+
+                <!-- Collapsible Menu -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark nav-hover" asp-controller="Home" asp-action="Index"> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark nav-hover" asp-controller="Home" asp-action="Index"> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark nav-hover" asp-controller="Home" asp-action="Privacy"> Privacy</a>
+                        </li>
+                    </ul>
+
+                    <!-- Role Switching / Login & Cart Button -->
+                    @{
+                        var token = Context.Request.Cookies["TestToken"];
+                        var role = Context.Request.Cookies["Role"];
+                    }
+
+                    <ul class="navbar-nav align-items-center">
+                        @if (!string.IsNullOrEmpty(token))
+                        {
+                            <li class="nav-item">
+                             
+                                    <a class="btn btn-outline-dark position-relative" asp-controller="User" asp-action="Changerole">
+                                    @if (role == "Buyer")
+                                    {
+                                        <span> Switch to Seller</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Switch to Buyer</span>
+                                    }
+                                </a>
+                            </li>
+
+                            @if (role == "Buyer")
+                            {
+                                <!-- Cart Icon (Only for Buyers) -->
+                                <li class="nav-item ms-3">
+                                    <a class="btn btn-outline-dark position-relative" asp-controller="Cart" asp-action="CartUi">
+                                        🛒 Cart
+                                    </a>
+                                </li>
+                            }
+
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://photosking.net/wp-content/uploads/2024/05/no-dp_16.webp" alt="Profile" class="rounded-circle" width="30" height="30">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                    <li><a class="dropdown-item" asp-controller="User" asp-action="UserProfile">Profile</a></li>
+                                    <li>
+                                        <form method="post" asp-controller="User" asp-action="Logout">
+                                            <button type="submit" class="dropdown-item">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="btn btn-sm btn-outline-primary px-3" asp-controller="User" asp-action="Login">
+                                    Login
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <style>
+            /* Navbar Hover Effect */
+            .nav-hover {
+                position: relative;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+                .nav-hover::after {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: black;
+                    bottom: 0;
+                    left: 50%;
+                    transition: all 0.3s ease;
+                }
+
+                .nav-hover:hover::after {
+                    width: 100%;
+                    left: 0;
+                }
+
+            /* Reduce Navbar Height */
+            .navbar {
+                padding: 8px 12px;
+            }
+        </style>
+
+    </header>
+    <main role="main" class="pb-3">
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </main>
+
+
+    <footer class="footer text-dark py-5" style="background-color:lightgray;">
+    <div class="container text-center">
+        <!-- Logo or Site Name -->
+        <h4 class="mb-3">E-Commerce</h4>
+
+        <!-- Links -->
+        <div class="mb-3">
+            <a class="text-decoration-none text-dark mx-2" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                <a class="text-decoration-none text-dark mx-2" href="#">Terms of Service</a>
+                <a class="text-decoration-none text-dark mx-2" href="#">Contact Us</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="mb-3">
+                <a href="#" class="text-dark mx-2"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+
+        <!-- Copyright -->
+        <div>
+            &copy; 2025 - <strong>E-Commerce</strong>. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- FontAwesome for icons (Include in <head> or before </body>) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+
+</html>
+
+
