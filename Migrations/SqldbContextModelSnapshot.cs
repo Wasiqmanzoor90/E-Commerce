@@ -22,9 +22,9 @@ namespace E_Commerce.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("E_Commerce.Models.DomainModel.Adress", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Address", b =>
                 {
-                    b.Property<Guid>("AdressId")
+                    b.Property<Guid>("AddressId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -62,11 +62,11 @@ namespace E_Commerce.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("AdressId");
+                    b.HasKey("AddressId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Adresses");
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("E_Commerce.Models.DomainModel.Cart", b =>
@@ -158,6 +158,16 @@ namespace E_Commerce.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsArchived")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("ProductDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -177,6 +187,10 @@ namespace E_Commerce.Migrations
 
                     b.Property<Guid>("SellerId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("SubCategory")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductId");
 
@@ -236,15 +250,15 @@ namespace E_Commerce.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("E_Commerce.Models.DomainModel.Adress", b =>
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Address", b =>
                 {
-                    b.HasOne("E_Commerce.Models.DomainModel.User", "user")
-                        .WithMany("Adresses")
+                    b.HasOne("E_Commerce.Models.DomainModel.User", "User")
+                        .WithMany("Addresses")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("user");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("E_Commerce.Models.DomainModel.Cart", b =>
@@ -252,7 +266,7 @@ namespace E_Commerce.Migrations
                     b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithOne("Cart")
                         .HasForeignKey("E_Commerce.Models.DomainModel.Cart", "UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("user");
@@ -263,13 +277,13 @@ namespace E_Commerce.Migrations
                     b.HasOne("E_Commerce.Models.DomainModel.Cart", "Cart")
                         .WithMany("CartItems")
                         .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("E_Commerce.Models.DomainModel.Product", "Product")
                         .WithMany("CartItems")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Cart");
@@ -282,13 +296,13 @@ namespace E_Commerce.Migrations
                     b.HasOne("E_Commerce.Models.DomainModel.Cart", "cart")
                         .WithMany("Orders")
                         .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("cart");
@@ -312,7 +326,7 @@ namespace E_Commerce.Migrations
                     b.HasOne("E_Commerce.Models.DomainModel.User", "user")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("user");
@@ -332,7 +346,7 @@ namespace E_Commerce.Migrations
 
             modelBuilder.Entity("E_Commerce.Models.DomainModel.User", b =>
                 {
-                    b.Navigation("Adresses");
+                    b.Navigation("Addresses");
 
                     b.Navigation("Cart");
 

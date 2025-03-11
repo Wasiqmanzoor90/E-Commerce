@@ -91,6 +91,8 @@ namespace E_Commerce.Controllers
                 ProductDescription = product.ProductDescription,
                 ProductPrice = product.ProductPrice,
                 ProductQuantity = product.ProductQuantity,
+                Category = product.Category,
+                SubCategory = product.SubCategory,
                 ProductPicUrl = imgurl,
                 SellerId = userid
 

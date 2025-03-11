@@ -1,0 +1,146 @@
+﻿@model List<E_Commerce.Models.DomainModel.Address>
+
+<div class="container mt-4">
+    <h2>Your Addresses</h2>
+
+    <form method="post" asp-action="Checkout" asp-controller="Order" id="checkoutForm">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Street</th>
+                    <th>District</th>
+                    <th>State</th>
+                    <th>Pincode</th>
+                    <th>Phone</th>
+                    <th>Landmark</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var address in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="radio" name="selectedAddressId" value="@address.AddressId" class="address-radio">
+                        </td>
+                        <td>@address.Street1, @address.Street2</td>
+                        <td>@address.District</td>
+                        <td>@address.State</td>
+                        <td>@address.Pincode</td>
+                        <td>@address.Phone</td>
+                        <td>@address.Landmark</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Proceed to Checkout Button -->
+        <button type="submit" class="btn btn-success mt-3" id="checkoutButton" disabled>✔ Proceed to Checkout</button>
+    </form>
+
+    <!-- Add New Address Button -->
+    <button class="btn btn-primary mt-4" onclick="openModal()">➕ Add New Address</button>
+</div>
+
+<!-- Address Modal -->
+<div id="addressModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Add New Address</h3>
+        <form method="post" asp-action="Addadress" asp-controller="User">
+            <div class="mb-3">
+                <label class="form-label">Street 1</label>
+                <input type="text" class="form-control" name="Street1" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Street 2</label>
+                <input type="text" class="form-control" name="Street2">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">District</label>
+                <input type="text" class="form-control" name="District" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">State</label>
+                <input type="text" class="form-control" name="State" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Pincode</label>
+                <input type="text" class="form-control" name="Pincode" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Phone</label>
+                <input type="text" class="form-control" name="Phone" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Landmark</label>
+                <input type="text" class="form-control" name="Landmark">
+            </div>
+            <button type="submit" class="btn btn-success">✔ Save Address</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Modal Styling */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    function openModal() {
+        document.getElementById("addressModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("addressModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+        let modal = document.getElementById("addressModal");
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+
+    // Enable Checkout button only if an address is selected
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkoutButton = document.getElementById("checkoutButton");
+        const radios = document.querySelectorAll(".address-radio");
+
+        radios.forEach(radio => {
+            radio.addEventListener("change", function () {
+                checkoutButton.disabled = !document.querySelector(".address-radio:checked");
+            });
+        });
+    });
+</script>

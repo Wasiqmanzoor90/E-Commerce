@@ -3,6 +3,7 @@ using E_Commerce.Data;
 using E_Commerce.Interface;
 using E_Commerce.Models.DomainModel;
 using E_Commerce.Models.ViewModel;
+using Microsoft.AspNetCore.Http.Metadata;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -439,8 +440,57 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         }
         return View(prod);
     }
+
+
+    [HttpGet]
+    public IActionResult AddressUi()
+    {
+        var token = Request.Cookies["TestToken"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        var userid = _jtoken.VerifyToken(token);
+        if (userid == Guid.Empty)
+        {
+            return View();
+        }
+
+        var address = _dbcontext.Addresses.Where(a => a.UserId == userid).ToList();
+        return View(address);
+    }
+
+
+    [HttpPost]
+    public async Task<IActionResult>Addaddress(Address address)
+    {
+        var token = Request.Cookies["TestToken"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
+        var userId = _jtoken.VerifyToken(token);
+        if (userId == Guid.Empty)
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return RedirectToAction("AddressUi");
+        }
+
+        address.AddressId = Guid.NewGuid();
+        address.UserId = userId;
+        address.DateCreated= DateTime.Now;
+        _dbcontext.Addresses.Add(address);
+        await _dbcontext.SaveChangesAsync();
+        return RedirectToAction("AddressUi");
+    }
 }
 
+ 
 
 
 

@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_Commerce.Models.DomainModel
 {
-    public class Adress
+    public class Address
     {
         [Key]
-        public Guid AdressId { get; set; }
+        public Guid AddressId { get; set; }
         public required string Street1 { get; set; }
         public required string Street2 { get; set; }
         public required string District { get; set; }
@@ -18,7 +18,7 @@ namespace E_Commerce.Models.DomainModel
 
         public required Guid UserId { get; set; }
         [ForeignKey("UserId")]
-        public User? user { get; set; }
+        public User? User { get; set; }
 
     }
 }

@@ -22,7 +22,7 @@ namespace E_Commerce.Models.DomainModel
         // Navigation properties (one to many) so the list need
         public ICollection<Order> Orders { get; set; } = [];
         public ICollection<Product> Products { get; set; } = [];
-        public ICollection<Adress> Adresses { get; set; } = [];
+        public ICollection<Address> Addresses { get; set; } = [];
         public ICollection<Review> Reviews { get; set; } = [];
     }
 }

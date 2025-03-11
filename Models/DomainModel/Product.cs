@@ -7,11 +7,16 @@ namespace E_Commerce.Models.DomainModel
     {
         [Key]
         public Guid ProductId { get; set; }
-        public required string ProductName { get; set; }
+        public required string ProductName { get; set;}
         public required int ProductPrice { get; set; }
-        public required int ProductQuantity { get; set; }
+        public required int ProductQuantity { get; set;}
+        public required string Category {  get; set;}
+        public required string SubCategory { get; set;}
+        public bool IsArchived { get; set; } = false;
+        public bool IsDeleted { get; set; } = false;
         public string? ProductDescription { get; set; }
         public required string ProductPicUrl { get; set; }
+
 
     
 

@@ -15,7 +15,7 @@ public class SqldbContext : DbContext
     public DbSet<Product> Products { get; set;}
     public DbSet<Cart> Carts {get; set;}
     public DbSet<CartItem> CartItems {get; set;}
-    public DbSet<Adress> Adresses { get; set;}
+    public DbSet<Address> Addresses { get; set;}
     public DbSet<Review>Reviews { get; set;}
 
 
@@ -26,7 +26,7 @@ public class SqldbContext : DbContext
             .HasOne(u => u.Cart)   //One User has one Cart
             .WithOne(c => c.user)  //One Cart belongs to one User
             .HasForeignKey<Cart>(c => c.UserId)  // ForeignKey from Cart to User
-                   .OnDelete(DeleteBehavior.Restrict);  // ⬅️ Change to RESTRICT
+                   .OnDelete(DeleteBehavior.NoAction);  // ⬅️ Change to RESTRICT
 
 
         // One User can have many Orders (One-to-many)
@@ -34,7 +34,7 @@ public class SqldbContext : DbContext
             .HasMany(u => u.Orders)
             .WithOne(o => o.user)
             .HasForeignKey(o => o.UserId)
-                .OnDelete(DeleteBehavior.Cascade);  // ✅ Keep CASCADE for CartItems
+               .OnDelete(DeleteBehavior.NoAction);
 
 
         // One Cart can have many CartItems (One-to-many)
@@ -42,34 +42,33 @@ public class SqldbContext : DbContext
             .HasMany(c => c.CartItems)
             .WithOne(ci => ci.Cart)
             .HasForeignKey(ci => ci.CartId)
-            .OnDelete(DeleteBehavior.Cascade);  // ✅ If Cart is deleted, delete the CartItems
+            .OnDelete(DeleteBehavior.NoAction);
 
         // One Product can have many CartItems (One-to-many)
         modelBuilder.Entity<Product>()
             .HasMany(p => p.CartItems)
             .WithOne(ci => ci.Product)
             .HasForeignKey(ci => ci.ProductId)
-            .OnDelete(DeleteBehavior.Cascade);  // ✅ If Product is deleted, delete the CartItems
+            .OnDelete(DeleteBehavior.NoAction);
 
         // One Cart can have many Orders (One-to-many)
         modelBuilder.Entity<Cart>()
             .HasMany(c => c.Orders)
             .WithOne(o => o.cart)
             .HasForeignKey(o => o.CartId)
-             .OnDelete(DeleteBehavior.Restrict);  // ⬅️ Change to RESTRICT
-                                                  // ❌ Prevents multiple cascade paths
+            .OnDelete(DeleteBehavior.NoAction);
+        // ❌ Prevents multiple cascade paths
 
         modelBuilder.Entity<User>()
-            .HasMany(a=>a.Adresses) //User can have many Adresses
-            .WithOne(u=> u.user) // And the User is one
+            .HasMany(a=>a.Addresses) //User can have many Adresses
+            .WithOne(u=> u.User) // And the User is one
             .HasForeignKey(u => u.UserId) // ForeignKey from Adress to User
-            .OnDelete(DeleteBehavior.Cascade);//if the user is deleted Adress is also delted
+             .OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder.Entity<User>()
             .HasMany(r => r.Reviews)      //User can have many Reviews
             .WithOne(u => u.user)         // And the User is one
             .HasForeignKey(u => u.UserId)  // ForeignKey from Review to User
-            .OnDelete(DeleteBehavior.Cascade); //if the user is deleted review is also delted
-
+              .OnDelete(DeleteBehavior.NoAction);
     }
 }             
