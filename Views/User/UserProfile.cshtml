@@ -1,21 +1,98 @@
-﻿<div style="height:90vh">
+﻿<div id="UserProfile" class="UserProfile">
+    <div class="UserProfile-content">
+        <div class="profile-header text-center">
+            <img src="https://i.pravatar.cc/150" alt="User Avatar" class="profile-avatar">
+            <h3 class="mt-2">@ViewBag.UserName</h3>
+            <p class="text-muted">@ViewBag.Role</p>
+        </div>
 
-<h2 class="text-center mb-3">User Profile</h2>
-<div class="card text-center " style="width: 30%; margin: auto;">
-    <div class="card-body">
-        <h5 class="card-title"><strong>Username:</strong> @ViewBag.UserName</h5>
-        <p class="card-text"><strong>Email:</strong> @ViewBag.UserEmail</p>
-        <p class="card-text"><strong>Role:</strong> @ViewBag.Role</p>
+        <div class="card profile-card">
+            <div class="card-body">
+                <p class="card-text"><strong>Email:</strong> @ViewBag.UserEmail</p>
+                <p class="card-text"><strong>Role:</strong> @ViewBag.Role</p>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-4">
+            <form asp-controller="User" asp-action="Logout" method="post">
+                <button type="submit" class="btn btn-danger btn-lg shadow-sm">Logout</button>
+            </form>
+
+            @{
+                var token = Context.Request.Cookies["TestToken"];
+                var Role = Context.Request.Cookies["Role"];
+            }
+            @if(!string.IsNullOrEmpty(token))
+            {
+               <a href="@Url.Action("ChangeRole", "User")">
+
+                   @if(Role == "Buyer")
+                   {
+                       <span>Switch to Seller</span>
+                   }
+                   else
+                   {
+                        <span>Switch to Buyer</span>
+                   }
+
+
+               </a>
+            }
+        </div>
     </div>
 </div>
 
-<!-- Centered buttons -->
-<div class="d-flex justify-content-center align-items-center mt-3">
-    <form asp-controller="User" asp-action="Logout" method="post">
-        <button type="submit" class="btn btn-success mx-2 mb-3">Logout</button> <br />
-        <a asp-controller="User" asp-action="Delete" class=" mx-2 mt-3">Delete Account</a>
-    </form> 
-   
-    @* <a asp-controller="User" asp-action="Edit" class="btn btn-success mx-2">Edit Profile</a> *@
-</div>
-</div>
+<style>
+    /* User Profile Styling */
+    .UserProfile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    .UserProfile-content {
+        width: 100%;
+        max-width: 420px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        position: relative;
+    }
+
+    .profile-header {
+        text-align: center;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-card {
+        border: none;
+        background: #f8f9fa;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+        padding: 15px;
+    }
+
+    .btn-danger {
+        background-color:black;
+        color:white;
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+     
+</style>

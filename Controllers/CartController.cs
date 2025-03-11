@@ -24,13 +24,20 @@ namespace E_Commerce.Controllers
             var token = Request.Cookies[TokenCookieName];
             if (string.IsNullOrEmpty(token))
             {
-                return RedirectToAction("Login", "Account"); // Redirect user if not logged in
+                return RedirectToAction("Login", "User"); // Redirect user if not logged in
             }
 
             var userId = _jsontoken.VerifyToken(token);
             if (userId == Guid.Empty)
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Login", "User");
+            }
+
+
+            var role = Request.Cookies["Role"];
+            if (role != "Buyer")
+            {
+                return RedirectToAction("Index", "Home"); // Redirect if not a Buyer
             }
 
             var cart = await _dbcontext.Carts

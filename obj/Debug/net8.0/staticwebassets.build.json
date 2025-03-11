@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q3/5iywATiIq+Fif6+OpaIoY+L6z9aX/tXAySfW9Cwc=",
+  "Hash": "ZpzLwK39fmqgjispeXFKwPbX4sof/crl0zYT4nKndJ8=",
   "Source": "E-Commerce",
   "BasePath": "_content/E-Commerce",
   "Mode": "Default",
@@ -101,6 +101,27 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\e3973b5a55ea31877ecb92258af61714.png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/e3973b5a55ea31877ecb92258af61714#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "khwlp9rmo2",
+      "Integrity": "uERgqcl1LKonXG3N18DPVEy5QGNr4VEWghvV3GD3JFs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\e3973b5a55ea31877ecb92258af61714.png"
+    },
+    {
       "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png",
       "SourceId": "E-Commerce",
       "SourceType": "Discovered",
@@ -183,6 +204,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Img\\Screenshot (40).png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (73).png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/Screenshot (73)#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p63f76hvl3",
+      "Integrity": "4czoFS0UEMh5PqadGnWGkBtrD+P0wyAagIW1YD4M/8U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Screenshot (73).png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (74).png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/Screenshot (74)#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fhbnelnnx4",
+      "Integrity": "HfS1v5ydUWqY+KQzwS1K7bI6kgKobyN7mad/eCbYQ+g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Screenshot (74).png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (75).png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/Screenshot (75)#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xyju7xpqjf",
+      "Integrity": "mVuCAUEBovJ/75cWgGhQfF78OBV+VkzsOpKqXfDnAkM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Screenshot (75).png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (76).png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/Screenshot (76)#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "buhy37dpvn",
+      "Integrity": "0/1SyPA9UMplb24oa4p7cRly1G+jjM76veBm/RDAcNM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Screenshot (76).png"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (77).png",
+      "SourceId": "E-Commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\",
+      "BasePath": "_content/E-Commerce",
+      "RelativePath": "Img/Screenshot (77)#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2nb88qyjdv",
+      "Integrity": "EoMQWs/RUvvPzyH0hKHKDkh39E7vuMDNw0jhuBQMP+M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Screenshot (77).png"
     },
     {
       "Identity": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot child.png",
@@ -1775,6 +1901,88 @@
       ]
     },
     {
+      "Route": "Img/e3973b5a55ea31877ecb92258af61714.khwlp9rmo2.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\e3973b5a55ea31877ecb92258af61714.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "73260"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uERgqcl1LKonXG3N18DPVEy5QGNr4VEWghvV3GD3JFs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 15:39:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "khwlp9rmo2"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/e3973b5a55ea31877ecb92258af61714.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uERgqcl1LKonXG3N18DPVEy5QGNr4VEWghvV3GD3JFs="
+        }
+      ]
+    },
+    {
+      "Route": "Img/e3973b5a55ea31877ecb92258af61714.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\e3973b5a55ea31877ecb92258af61714.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "73260"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uERgqcl1LKonXG3N18DPVEy5QGNr4VEWghvV3GD3JFs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 15:39:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uERgqcl1LKonXG3N18DPVEy5QGNr4VEWghvV3GD3JFs="
+        }
+      ]
+    },
+    {
       "Route": "Img/kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png",
       "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\kisspng-american-eagle-outfitters-clothing-logo-retail-american-eagle-5ac2cffde720a1.9131612615227166699467.png",
       "Selectors": [],
@@ -2099,6 +2307,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-mpqye3F1GtDw6AReRCYm5w11Cnv8qc+0xzvU0KrSgc8="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (73).p63f76hvl3.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (73).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1014003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4czoFS0UEMh5PqadGnWGkBtrD+P0wyAagIW1YD4M/8U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 09:48:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p63f76hvl3"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/Screenshot (73).png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4czoFS0UEMh5PqadGnWGkBtrD+P0wyAagIW1YD4M/8U="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (73).png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (73).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1014003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4czoFS0UEMh5PqadGnWGkBtrD+P0wyAagIW1YD4M/8U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 09:48:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4czoFS0UEMh5PqadGnWGkBtrD+P0wyAagIW1YD4M/8U="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (74).fhbnelnnx4.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (74).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1261489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HfS1v5ydUWqY+KQzwS1K7bI6kgKobyN7mad/eCbYQ+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 10:06:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fhbnelnnx4"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/Screenshot (74).png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HfS1v5ydUWqY+KQzwS1K7bI6kgKobyN7mad/eCbYQ+g="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (74).png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (74).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1261489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HfS1v5ydUWqY+KQzwS1K7bI6kgKobyN7mad/eCbYQ+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 10:06:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HfS1v5ydUWqY+KQzwS1K7bI6kgKobyN7mad/eCbYQ+g="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (75).png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (75).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1601474"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mVuCAUEBovJ/75cWgGhQfF78OBV+VkzsOpKqXfDnAkM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 10:10:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mVuCAUEBovJ/75cWgGhQfF78OBV+VkzsOpKqXfDnAkM="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (75).xyju7xpqjf.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (75).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1601474"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mVuCAUEBovJ/75cWgGhQfF78OBV+VkzsOpKqXfDnAkM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 10:10:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xyju7xpqjf"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/Screenshot (75).png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mVuCAUEBovJ/75cWgGhQfF78OBV+VkzsOpKqXfDnAkM="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (76).buhy37dpvn.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (76).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1414405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/1SyPA9UMplb24oa4p7cRly1G+jjM76veBm/RDAcNM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 10:13:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "buhy37dpvn"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/Screenshot (76).png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0/1SyPA9UMplb24oa4p7cRly1G+jjM76veBm/RDAcNM="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (76).png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (76).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1414405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/1SyPA9UMplb24oa4p7cRly1G+jjM76veBm/RDAcNM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 10:13:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0/1SyPA9UMplb24oa4p7cRly1G+jjM76veBm/RDAcNM="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (77).2nb88qyjdv.png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (77).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "593884"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EoMQWs/RUvvPzyH0hKHKDkh39E7vuMDNw0jhuBQMP+M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 10:15:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2nb88qyjdv"
+        },
+        {
+          "Name": "label",
+          "Value": "Img/Screenshot (77).png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EoMQWs/RUvvPzyH0hKHKDkh39E7vuMDNw0jhuBQMP+M="
+        }
+      ]
+    },
+    {
+      "Route": "Img/Screenshot (77).png",
+      "AssetFile": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\wwwroot\\Img\\Screenshot (77).png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "593884"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EoMQWs/RUvvPzyH0hKHKDkh39E7vuMDNw0jhuBQMP+M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Mar 2025 10:15:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EoMQWs/RUvvPzyH0hKHKDkh39E7vuMDNw0jhuBQMP+M="
         }
       ]
     },

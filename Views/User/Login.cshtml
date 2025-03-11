@@ -1,33 +1,81 @@
 ﻿@model E_Commerce.Models.ViewModel.Login
 
-<form asp-action="Login" asp-controller="User" method="post" style="height:90vh" class="mt-5">
-    <div class="form-group mb-3">
-        <label asp-for="Email" class="form-label"></label>
-        <input asp-for="Email" type="email" class="form-control" required />
+<div class="Login">
+    <div class="Login-content">
+        <h3>Login</h3>
+
+        <form  asp-action="Login" asp-controller="User" method="post">
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" type="email" class="form-control input-border" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" type="password" class="form-control input-border" required />
+            </div>
+
+            <button type="submit" class="btnn mb-3">Login</button> <br />
+            <a asp-action="Register" asp-controller="User"> Signup </a>
+
+
+            <!-- Error Message -->
+            @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage as string))
+            {
+                <div class="alert alert-danger mt-3" role="alert">
+                    <p>@ViewBag.ErrorMessage</p>
+                </div>
+            }
+
+            <!-- Success Message -->
+            @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage as string))
+            {
+                <div class="alert alert-success mt-3" role="alert">
+                    <p>@ViewBag.SuccessMessage</p>
+                </div>
+            }
+        </form>
     </div>
+</div>
 
-    <div class="form-group mb-3">
-        <label asp-for="Password" class="form-label"></label>
-        <input asp-for="Password" type="password" class="form-control" required />
-    </div>
-
-    <button type="submit" class="btn btn-success mb-3">Login</button> <br />
-    <a asp-action ="Register" asp-controller="User"> Signup </a> 
-   
-
-    <!-- Error Message -->
-    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage as string))
+<style>
+    .Login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+    }
+    .btnn
     {
-        <div class="alert alert-danger mt-3" role="alert">
-            <p>@ViewBag.ErrorMessage</p>
-        </div>
+        color: white;
+        background-color: black;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+    .Login-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 350px;
+        max-height: 500px;
+        overflow-y: auto;
+        border: 2px solid transparent;
+        transition: border 0.3s ease-in-out;
     }
 
-    <!-- Success Message -->
-    @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage as string))
-    {
-        <div class="alert alert-success mt-3" role="alert">
-            <p>@ViewBag.SuccessMessage</p>
-        </div>
+        .Login-content:hover {
+            border: 2px solid black; /* Green border on hover */
+        }
+
+    .input-border {
+        border: 1px solid #ccc;
+        transition: border 0.3s ease-in-out;
     }
-</form>
+
+        .input-border:hover {
+            border: 1px solid black;
+        }
+</style>

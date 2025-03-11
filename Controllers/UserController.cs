@@ -441,7 +441,6 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         return View(prod);
     }
 
-
     [HttpGet]
     public IActionResult AddressUi()
     {
@@ -450,19 +449,19 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         {
             return RedirectToAction("Index", "Home");
         }
+
         var userid = _jtoken.VerifyToken(token);
         if (userid == Guid.Empty)
         {
-            return View();
+            return RedirectToAction("Index", "Home"); // ✅ Redirect instead of returning an empty view
         }
 
-        var address = _dbcontext.Addresses.Where(a => a.UserId == userid).ToList();
-        return View(address);
+        var addressList = _dbcontext.Addresses.Where(a => a.UserId == userid).ToList();
+
+        return View(addressList); // ✅ Ensure addresses are passed to the view
     }
-
-
     [HttpPost]
-    public async Task<IActionResult>Addaddress(Address address)
+    public async Task<IActionResult> Addaddress(Address address)
     {
         var token = Request.Cookies["TestToken"];
         if (string.IsNullOrEmpty(token))
@@ -478,19 +477,22 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
 
         if (!ModelState.IsValid)
         {
-            return RedirectToAction("AddressUi");
+            return RedirectToAction("AddressUi"); // ✅ Redirect if validation fails
         }
 
         address.AddressId = Guid.NewGuid();
         address.UserId = userId;
-        address.DateCreated= DateTime.Now;
+        address.DateCreated = DateTime.Now;
+
         _dbcontext.Addresses.Add(address);
         await _dbcontext.SaveChangesAsync();
-        return RedirectToAction("AddressUi");
+
+        return RedirectToAction("AddressUi"); // ✅ Ensure the user is redirected back to the updated list
     }
+
 }
 
- 
+
 
 
 
