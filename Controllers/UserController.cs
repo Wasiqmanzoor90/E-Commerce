@@ -362,7 +362,7 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         }
 
         // Retrieve all products with quantity greater than zero
-        var products = await _dbcontext.Products.Where(p => p.ProductQuantity > 0).ToListAsync();
+        var products = await _dbcontext.Products.Where(p => p.ProductQuantity > 0 && p.IsArchived == false && p.IsDeleted== false).ToListAsync();
         return View(products);
 
     }

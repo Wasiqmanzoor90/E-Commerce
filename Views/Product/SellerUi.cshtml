@@ -1,54 +1,18 @@
 ﻿@model IEnumerable<E_Commerce.Models.DomainModel.Product>
 
-
+<div class="container my-5" style="margin-bottom: 60px; height: 90vh;">
 <h2 class="text-2xl font-bold mb-4">My Products</h2>
 
-@if (!Model.Any())
-{
-    <p>No products found.</p>
-}
-else
-{
-    <table class="table-auto w-full border border-collapse">
-        <thead>
-            <tr class="bg-gray-200">
-                <th class="border px-4 py-2">Product Name</th>
-                <th class="border px-4 py-2">Price</th>
-                <th class="border px-4 py-2">Quantity</th>
-                <th class="border px-4 py-2">Image</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var product in Model)
-            {
-                <tr>
-                    <td class="border px-4 py-2">@product.ProductName</td>
-                    <td class="border px-4 py-2">$@product.ProductPrice</td>
-                    <td class="border px-4 py-2">@product.ProductQuantity</td>
-                    <td class="border px-4 py-2">
-                        <img src="@product.ProductPicUrl" alt="@product.ProductName" width="80" height="50" />
-                    </td>
-                    <td><button class="btn btn-success btn-s mb-2 mx-2">Edit</button><br/>
 
-                        <form method="post"
-                              asp-controller="Product"
-                              asp-action="Delete"
-                              asp-route-id="@product.ProductId"
-                              style="display:inline;">
-                            <button type="submit"
-                                    class="btn btn-danger btn-sm mx-2 mb-2"
-                                    onclick="return confirm('Are you sure you want to delete this product?')">
-                                Delete
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <form asp-action="Register" asp-controller="Product" method="get">
-        <button type="submit" class="btn btn-success">Create Product</button>
-    </form>
+ <a asp-action="SellerProduct" asp-controller="Product">View products</a><br />
+<a asp-action="IsArcheive" asp-controller="Product">Archeive Produts</a>
+<br />
 
-}
+    <a asp-action="IsDeleted" asp-controller="Product">Recycle Bin</a>
+    <br />
+
+<a asp-action="Register" asp-controller="Product">Create Product</a>
+   
+</div>
+
 

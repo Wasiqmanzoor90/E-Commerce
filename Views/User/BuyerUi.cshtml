@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<E_Commerce.Models.DomainModel.Product>
 
-<div class="container mt-4">
+<div class="container mt-4" style="margin-bottom: 60px; height: 90vh;">
     <h2>Available Products</h2>
     <div class="row">
         @if (Model != null && Model.Any()) // ✅ Fix: Check if Model is a collection
@@ -19,13 +19,21 @@
                             </div>
                         </div>
                     </a>
-                      <form method="post" asp-action="CartUi" asp-controller="Cart" asp-route-id="@product.ProductId">
-                                    <div class="input-group mb-2">
-                                        <input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="@product.ProductQuantity" required>
-                            <button class="btn-cart">Add to Cart</button>
-                                    </div>
-                                </form>
+                    <form method="post" asp-action="CartUi" asp-controller="Cart" asp-route-id="@product.ProductId">
+                        <div class="input-group mb-2">
+                            <!-- Quantity Input -->
+                            <input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="@product.ProductQuantity" required>
+                            
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn-cart flex-grow-1">Add to Cart</button>
+                           
+                        </div>
+                    </form>
                 </div>
+               
             }
         }
         else
@@ -36,6 +44,7 @@
         }
     </div>
 </div>
+
 
 <style>
     .btn-cart {

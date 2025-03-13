@@ -90,8 +90,13 @@ namespace E_Commerce.Controllers
             }
 
             // Fetch the existing cart item, even if it was deleted before
-            var cartItem = await _dbcontext.CartItems.IgnoreQueryFilters()
-                .FirstOrDefaultAsync(ci => ci.CartId == cart.CartId && ci.ProductId == id);
+
+            //        var cartItem = await _dbcontext.CartItems
+            //.IgnoreQueryFilters()
+            //.FirstOrDefaultAsync(ci => ci.CartId == cart.CartId && ci.ProductId == id);
+            var cartItem = await _dbcontext.CartItems
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(ci => ci.CartId == cart.CartId && ci.ProductId == id);
 
             if (cartItem != null)
             {
@@ -104,7 +109,7 @@ namespace E_Commerce.Controllers
                 cartItem.Quantity += quantity;
                 cartItem.Price = cartItem.Quantity * product.ProductPrice;
 
-                _dbcontext.Entry(cartItem).State = EntityState.Modified; // ✅ Ensure changes are tracked
+                _dbcontext.CartItems.Update(cartItem); // ✅ Ensure changes are tracked
             }
             else
             {
@@ -138,9 +143,11 @@ namespace E_Commerce.Controllers
 
 
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> RemoveItem(Guid id)
         {
+
+            Console.WriteLine($"Received CartItemId: {id}"); // Log the id
             var token = Request.Cookies["TestToken"];
             if (string.IsNullOrEmpty(token))
             {
@@ -153,6 +160,11 @@ namespace E_Commerce.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
+    
+
+
+
+
             var cartItem = await _dbcontext.CartItems
                 .FirstOrDefaultAsync(ci => ci.CartItemId == id);
 
@@ -160,11 +172,20 @@ namespace E_Commerce.Controllers
             {
                 return NotFound("Cart item not found.");
             }
-
+            var cart = await _dbcontext.Carts.FindAsync(cartItem.CartId);
+            if (cart == null)
+            {
+                return NotFound("Cart item not found.");
+            }
             _dbcontext.CartItems.Remove(cartItem);
             await _dbcontext.SaveChangesAsync();
+            cart.Totalprice = await _dbcontext.CartItems.Where(ci => ci.CartId == cart.CartId).SumAsync(ci => ci.Price * ci.Quantity);
+            cart.CartQuantity = await _dbcontext.CartItems.Where(qi => qi.CartId == cart.CartId).SumAsync(qi => qi.Quantity);
 
+
+            await _dbcontext.SaveChangesAsync();
             return RedirectToAction("CartUi");
+
         }
-}
+    }
     }

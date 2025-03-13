@@ -1,0 +1,44 @@
+﻿@model IEnumerable<E_Commerce.Models.DomainModel.Product>
+
+
+<h2 class="text-2xl font-bold mb-4">My Products</h2>
+
+@if (!Model.Any())
+{
+        <p>No products found.</p>
+}
+else
+{
+        <table class="table-auto w-full border border-collapse">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border px-4 py-2">Product Name</th>
+                    <th class="border px-4 py-2">Price</th>
+                    <th class="border px-4 py-2">Quantity</th>
+                    <th class="border px-4 py-2">Image</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var product in Model)
+            {
+                        <tr>
+                            <td class="border px-4 py-2">@product.ProductName</td>
+                            <td class="border px-4 py-2">$@product.ProductPrice</td>
+                            <td class="border px-4 py-2">@product.ProductQuantity</td>
+                            <td class="border px-4 py-2">
+                                <img src="@product.ProductPicUrl" alt="@product.ProductName" width="80" height="50" />
+                            </td>
+                            <td><button class="btn btn-success btn-s mb-2 mx-2">Edit</button><br/>
+
+                        <a asp-action="Archiveproduct" asp-controller="Product" asp-route-Id="@product.ProductId">Archeive</a>
+                            </td>
+                        </tr>
+            }
+            </tbody>
+        </table>
+        <form asp-action="Register" asp-controller="Product" method="get">
+            <button type="submit" class="btn btn-success">Create Product</button>
+        </form>
+
+}
+
