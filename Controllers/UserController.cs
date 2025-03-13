@@ -311,65 +311,66 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
             var Newtoken = _jtoken.CreateToken(user.UserId, user.Email, user.Name, user.Role);
 
             //  Update cookies with the new token and role
-            Response.Cookies.Append("TestToken", Newtoken, new CookieOptions 
-            { HttpOnly = true, 
+            Response.Cookies.Append("TestToken", Newtoken, new CookieOptions
+            {
+                HttpOnly = true,
                 Secure = true,
-                SameSite = SameSiteMode.Strict });
+                SameSite = SameSiteMode.Strict
+            });
 
             Response.Cookies.Append("Role", user.Role.ToString(), new CookieOptions
-              { HttpOnly = true,
-               Secure = true,
-              SameSite = SameSiteMode.Strict });
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict
+            });
 
 
             if (user.Role == Types.Role.Buyer)
             {
-                return RedirectToAction("BuyerUi","User");
+                return RedirectToAction("BuyerUi", "User");
             }
-        
+
             else
             {
-                return RedirectToAction("SellerUi","Product"); // Redirect Seller to Index1
+                return RedirectToAction("SellerUi", "Product"); // Redirect Seller to Index1
             }
 
-              }
+        }
 
         return RedirectToAction("Index", "Home");
-    
-
-
 
     }
 
 
     [HttpGet]
-    public async Task <IActionResult> BuyerUi(Product product)
+    public async Task<IActionResult> BuyerUi(Product product)
     {
         var token = Request.Cookies["TestToken"];
-      if(string.IsNullOrEmpty(token))
+        if (string.IsNullOrEmpty(token))
         {
             return RedirectToAction("Index", "Home");
         }
-      var userid= _jtoken.VerifyToken(token);
-        if(userid == Guid.Empty)
+        var userid = _jtoken.VerifyToken(token);
+        if (userid == Guid.Empty)
         {
             return View();
         }
-        var Buyer = await _dbcontext.Users.FirstOrDefaultAsync(u =>  u.UserId == userid);
-        if(Buyer == null|| Buyer.Role != Types.Role.Buyer)
+        var Buyer = await _dbcontext.Users.FirstOrDefaultAsync(u => u.UserId == userid);
+        if (Buyer == null || Buyer.Role != Types.Role.Buyer)
         {
-            return RedirectToAction("Index", "Home");   
+            return RedirectToAction("Index", "Home");
         }
 
         // Retrieve all products with quantity greater than zero
-        var products = await _dbcontext.Products.Where(p => p.ProductQuantity > 0 && p.IsArchived == false && p.IsDeleted== false).ToListAsync();
+        var products = await _dbcontext.Products.Where(p => p.ProductQuantity > 0 && p.IsArchived == false && p.IsDeleted == false).ToListAsync();
         return View(products);
 
     }
 
 
     [HttpGet]
-    public async Task <IActionResult> Adminconsole()
+    public async Task<IActionResult> Adminconsole()
     {
         var token = Request.Cookies["TestToken"];
         if (string.IsNullOrEmpty(token))
@@ -390,15 +391,15 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         {
             return View();
         }
-       
+
     }
 
-    [HttpPost]   
-    public async Task <IActionResult> Adminconsole(User user, Product product)
+    [HttpPost]
+    public async Task<IActionResult> Adminconsole(User user, Product product)
     {
         var token = Request.Cookies["TestToken"];
-       if(string.IsNullOrEmpty(token))
-            {
+        if (string.IsNullOrEmpty(token))
+        {
             return RedirectToAction("Index", "Home");
         }
         var userid = _jtoken.VerifyToken(token);
@@ -460,6 +461,8 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
 
         return View(addressList); // ✅ Ensure addresses are passed to the view
     }
+
+
     [HttpPost]
     public async Task<IActionResult> Addaddress(Address address)
     {
@@ -490,6 +493,57 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         return RedirectToAction("AddressUi"); // ✅ Ensure the user is redirected back to the updated list
     }
 
+
+
+    [HttpGet]
+    public async Task<IActionResult> LadiesUi()
+    {
+        var token = Request.Cookies["TestToken"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        var userid = _jtoken.VerifyToken(token);
+        if (userid == Guid.Empty)
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        var buyer = await _dbcontext.Users.FirstOrDefaultAsync(u => u.UserId == userid);
+        if (buyer == null || buyer.Role != Types.Role.Buyer)
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        var buy = await _dbcontext.Products.Where(p => p.ProductQuantity > 0 && p.IsArchived == false && p.IsDeleted == false && p.Category == "ladies").ToListAsync();
+        return View(buy);
+
+
+    }
+
+
+
+    [HttpGet]
+    public async Task<IActionResult> MenUi()
+    {
+        var token = Request.Cookies["TestToken"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        var userid = _jtoken.VerifyToken(token);
+        if (userid == Guid.Empty)
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        var buyer = await _dbcontext.Users.FirstOrDefaultAsync(u => u.UserId == userid);
+        if (buyer == null || buyer.Role != Types.Role.Buyer)
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        var buy = await _dbcontext.Products.Where(p => p.ProductQuantity > 0 && p.IsArchived == false && p.IsDeleted == false && p.Category == "men").ToListAsync();
+        return View(buy);
+
+
+    }
 }
 
 
