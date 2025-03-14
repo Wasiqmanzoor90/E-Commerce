@@ -1,6 +1,6 @@
 ﻿@model E_Commerce.Models.DomainModel.Product
 
-<form method="post" enctype="multipart/form-data" asp-action="Register" asp-controller="Product">
+<form id="productForm" method="post" enctype="multipart/form-data" asp-action="Register" asp-controller="Product">
     <div class="mb-3">
         <label class="form-label">Product Name</label>
         <input asp-for="ProductName" class="form-control" required />
@@ -35,7 +35,7 @@
         <input  name="file" type="file" class="form-control" required/>
     </div>
 
-    <button type="submit" class="btn btn-primary">Register Product</button>
+    <button type="submit" class="btn btn-primary" id="registerBtn">Register Product</button>
     <!-- Error Message -->
     @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage as string))
     {
@@ -52,3 +52,12 @@
         </div>
     }
 </form>
+
+
+<script>
+    document.getElementById("productForm").addEventListener("submit", function() {
+        let button = document.getElementById("registerBtn");
+        button.disabled = true;
+        button.textContent = "Processing...";
+    });
+</script>

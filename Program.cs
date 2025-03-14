@@ -1,24 +1,31 @@
-using E_Commerce.Data;
+﻿using E_Commerce.Data;
 using E_Commerce.Interface;
 using E_Commerce.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
-//Add session support
+// Add session support
 builder.Services.AddSession();
 
-
-// ? Register IHttpContextAccessor
+// Register IHttpContextAccessor
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-builder.Services.AddDbContext<SqldbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+// Database Context
+builder.Services.AddDbContext<SqldbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+
 builder.Services.AddScoped<IJasonToken, JasonTokenServicecs>();
 builder.Services.AddScoped<ICloudinaryInterface, CloudnaryService>();
+
+
+
 
 var app = builder.Build();
 
@@ -26,18 +33,18 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
-app.UseSession(); //session middleware
-
+app.UseSession(); // ✅ Session middleware
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+
+
+app.UseMiddleware<TokenMiddleware>(); // ✅ Move TokenMiddleware after authentication
 
 app.MapControllerRoute(
     name: "default",

@@ -352,3 +352,4 @@ C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\E-Commer
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\E-Commerce.genruntimeconfig.cache
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\ref\E-Commerce.dll
 C:\Users\admin\source\repos\Dotnet projects\E-Commerce\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\admin\source\repos\Dotnet projects\E-Commerce\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

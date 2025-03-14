@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\user\\productdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\user\\productdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\user\\menui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\user\\menui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,22 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAkwHQAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T12:37:28.64Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
@@ -49,27 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductDetail.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\ProductDetail.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\ProductDetail.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\ProductDetail.cshtml",
-              "RelativeToolTip": "Views\\User\\ProductDetail.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T16:23:53.782Z",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T12:57:39.499Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MenUi.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\MenUi.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\MenUi.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\MenUi.cshtml",
-              "RelativeToolTip": "Views\\User\\MenUi.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T16:13:26.619Z",
+              "DocumentIndex": 1,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T12:57:32.737Z",
               "EditorCaption": ""
             }
           ]

@@ -2,6 +2,8 @@
 using E_Commerce.Data;
 using E_Commerce.Interface;
 using E_Commerce.Models.DomainModel;
+using E_Commerce.Types;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using static System.Net.Mime.MediaTypeNames;
@@ -19,65 +21,38 @@ namespace E_Commerce.Controllers
         [HttpGet]
         public async Task<IActionResult> SellerUi()
         {
-            var token = Request.Cookies["TestToken"];
-            if (string.IsNullOrEmpty(token))
-            {
-                return RedirectToAction("Login", "User");
-            }
-            var userid = _jasonToken.VerifyToken(token);
-            if (userid == Guid.Empty)
-            {
-                return RedirectToAction("Login", "User");
-            }
-            var Seller = await _dbcontext.Users.FirstOrDefaultAsync(u => u.UserId == userid);
+            var Seller = HttpContext.Items["User"] as User;
             if (Seller == null || Seller.Role != Types.Role.Seller)
             {
                 return RedirectToAction("Index", "Home");
             }
 
-            var products = await _dbcontext.Products.Where(p => p.SellerId == userid).ToListAsync();
+            var products = await _dbcontext.Products.Where(p => p.SellerId == Seller.UserId).ToListAsync();
             return View(products);
         }
 
 
         [HttpGet]
-        public async Task<IActionResult> Register()
+        public IActionResult Register()
         {
-            var token = Request.Cookies["TestToken"];
-            if (string.IsNullOrEmpty(token))
-            {
-                return RedirectToAction("Login", "User");
-            }
-            var userid = _jasonToken.VerifyToken(token);
-            if (userid == Guid.Empty)
-            {
-                return RedirectToAction("Login", "User");
-            }
-            var Seller = await _dbcontext.Users.FirstOrDefaultAsync(u => u.UserId == userid);
+            var Seller = HttpContext.Items["User"] as User;
+
             if (Seller == null || Seller.Role != Types.Role.Seller)
             {
                 return RedirectToAction("Index", "Home");
             }
+            return View();
 
-            else
-            {
-                return View();
-            }
         }
 
 
         [HttpPost]
         public async Task<IActionResult> Register([FromForm] Product product, IFormFile file)
         {
-            var token = Request.Cookies["TestToken"];
-            if (string.IsNullOrEmpty(token))
+            var user = HttpContext.Items["User"] as User;
+            if(user == null)
             {
-                return RedirectToAction("Login", "User");
-            }
-            var userid = _jasonToken.VerifyToken(token);
-            if (userid == Guid.Empty)
-            {
-                return View();
+                return RedirectToAction("Index", "Home");
             }
             string imgurl = null;
             if (file != null && file.Length > 0)
@@ -94,7 +69,7 @@ namespace E_Commerce.Controllers
                 Category = product.Category,
                 SubCategory = product.SubCategory,
                 ProductPicUrl = imgurl,
-                SellerId = userid
+                SellerId = user.UserId
 
             };
             try
@@ -114,80 +89,38 @@ namespace E_Commerce.Controllers
             return View();
         }
 
-        // POST: Perform the deletion directly when the button is clicked
-        [HttpPost]
-        [Route("Product/Delete/{id}")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            var token = Request.Cookies["TestToken"];
-            if (string.IsNullOrEmpty(token))
-            {
-                return Unauthorized(); // Better UX than a blank page
-            }
-
-            var Userid = _jasonToken.VerifyToken(token);
-            var product = await _dbcontext.Products.FirstOrDefaultAsync(p => p.ProductId == id);
-            if (product == null)
-            {
-                return NotFound(); // If product does not exist
-            }
-
-            _dbcontext.Products.Remove(product);
-            await _dbcontext.SaveChangesAsync();
-
-            // Redirect to a list of products (or another relevant page)
-            return RedirectToAction("SellerUi"); // Or whatever your listing page is
-        }
-
-
+     
         [HttpGet]
         public async Task<IActionResult> SellerProduct()
         {
-            var token = Request.Cookies["TestToken"];
-            if (string.IsNullOrEmpty(token))
-            {
-                return Unauthorized(); // Better UX than a blank page
-            }
-
-            var userid = _jasonToken.VerifyToken(token);
-            if (userid == Guid.Empty)
-            {
-                return RedirectToAction("Login", "User");
-            }
-            var seller = await _dbcontext.Users.FirstOrDefaultAsync(u => u.UserId == userid);
+            var seller = HttpContext.Items["User"] as User;
 
             if (seller == null || seller.Role != Types.Role.Seller)
             {
                 return RedirectToAction("Index", "Home");
             }
 
-            var products = await _dbcontext.Products.Where(p => p.SellerId == userid && p.IsArchived == false && p.IsDeleted == false).ToListAsync();
+            var products = await _dbcontext.Products.Where(p => p.SellerId == seller.UserId && p.IsArchived == false && p.IsDeleted == false).ToListAsync();
             return View(products);
 
-
         }
-
-
 
 
         [HttpGet]
         public async Task<IActionResult> IsArcheive()
         {
-            var token = Request.Cookies["TestToken"];
-            if (string.IsNullOrEmpty(token))
-            {
-                return Unauthorized();
-            }
-            var userid = _jasonToken.VerifyToken(token);
-            if (userid == Guid.Empty)
+            var user = HttpContext.Items["User"] as User;
+            if (user == null|| user.Role != Role.Seller)
             {
                 return RedirectToAction("Index", "Home");
             }
-            ViewBag.UserId = userid;
-            var product = await _dbcontext.Products.Where(p => p.SellerId == userid && p.IsArchived == true && p.IsDeleted == false).ToListAsync();
+
+            ViewBag.UserId = user.UserId;
+            var product = await _dbcontext.Products.Where(p => p.SellerId == user.UserId && p.IsArchived == true && p.IsDeleted == false).ToListAsync();
             return View(product);
 
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Archiveproduct(Guid id)
@@ -201,6 +134,7 @@ namespace E_Commerce.Controllers
             }
             return RedirectToAction("SellerProduct");
         }
+
 
         [HttpGet]
         public async Task<IActionResult> UnArchive(Guid id)
@@ -216,22 +150,17 @@ namespace E_Commerce.Controllers
         }
 
 
-
         [HttpGet]
         public async Task<IActionResult> IsDeleted()
         {
-            var token = Request.Cookies["TestToken"];
-            if (string.IsNullOrEmpty(token))
+            var user = HttpContext.Items["User"] as User;
+            if (user == null || user.Role != Role.Seller)
             {
                 return RedirectToAction("Index", "Home");
             }
-            var userid = _jasonToken.VerifyToken(token);
-            if (userid == Guid.Empty)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            ViewBag.UserId = userid;
-            var product = await _dbcontext.Products.Where(p => p.SellerId == userid && p.IsArchived == true && p.IsDeleted == true).ToListAsync();
+
+            ViewBag.UserId = user.UserId;
+            var product = await _dbcontext.Products.Where(p => p.SellerId == user.UserId && p.IsArchived == true && p.IsDeleted == true).ToListAsync();
             return View(product);
 
         }

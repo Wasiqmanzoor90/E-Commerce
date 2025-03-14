@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\product\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\product\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\user\\ladiesui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\user\\ladiesui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\user\\menui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\user\\menui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\user\\buyerui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\user\\buyerui.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\user\\userprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\user\\userprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,80 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MenUi.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\MenUi.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\MenUi.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\MenUi.cshtml",
-              "RelativeToolTip": "Views\\User\\MenUi.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Product\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Register.cshtml",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Product\\Register.cshtml*",
+              "RelativeToolTip": "Views\\Product\\Register.cshtml*",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACUAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T16:13:26.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BuyerUi.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\BuyerUi.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\BuyerUi.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\BuyerUi.cshtml",
-              "RelativeToolTip": "Views\\User\\BuyerUi.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T15:46:50.681Z",
+              "WhenOpened": "2025-03-14T12:49:50.803Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LadiesUi.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\LadiesUi.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\LadiesUi.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\LadiesUi.cshtml",
-              "RelativeToolTip": "Views\\User\\LadiesUi.cshtml",
-              "ViewState": "AgIAACYAAAAAAAAAAAAywCsAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T15:46:43.864Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAICAAAAAAAAAAAAAAwCAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T15:33:17.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T12:40:12.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml*",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAkwHQAAABTAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAAAEwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T12:37:28.64Z",
+              "WhenOpened": "2025-03-14T12:20:39.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\UserProfile.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\UserProfile.cshtml",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\User\\UserProfile.cshtml",
+              "RelativeToolTip": "Views\\User\\UserProfile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-14T10:12:21.984Z",
               "EditorCaption": ""
             }
           ]

@@ -74,8 +74,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Sustainability</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Customer Service</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Newsletter</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">...</a></li>
-                </ul>
+                 </ul>
 
                 <!-- Center Logo -->
                 <a class="navbar-brand mx-auto" href="#">
@@ -92,20 +91,26 @@
                     @if (string.IsNullOrEmpty(token))
                     {
                         <!-- If user is NOT logged in, show Sign In -->
-                        <a href="@Url.Action("Login", "User")"><i class="fa-regular fa-user"></i> Sign in</a>
+                        <a href="@Url.Action("Login", "User")"><i style="font-size:23px" class="fa-regular fa-user "></i> </a>
                     }
                     else
                     {
                         <!-- If user is logged in, show Profile Icon -->
                         <a href="@Url.Action("UserProfile", "User")">
-                            <i class="fa-solid fa-user-circle"></i> Account
+                            <i style="font-size:23px" class="fa-solid fa-user-circle fa-1x"></i>
                         </a>
+                       
                     }
 
-                    <a href="#"><i class="fa-regular fa-heart"></i> Favourites</a>
-                    <a href="@Url.Action("CartUi","Cart")"><i class="fa-solid fa-bag-shopping"></i> Shopping bag</a>
+                    <a href="#"><i style="font-size:23px" class="fa-regular fa-heart "></i> </a>
+                    <a href="@Url.Action("CartUi","Cart")"><i style="font-size:23px" class="fa-solid fa-bag-shopping "></i></a>
                 </div>
+                <style>
+                    .navbar-icons i {
+                        font-size: 22px; /* Adjust to match approximately 1.4x */
+                    }
 
+                </style>
             </div>
         </nav>
 
