@@ -10,9 +10,8 @@ namespace E_Commerce.Models.DomainModel
         public Guid UserId { get; set; }
         [ForeignKey("UserId")]
         public User? user { get; set; }
-
+        public int CartQuantity {  get; set; }
         public decimal Totalprice { get; set; }
-        public int CartQuantity { get; set; }
 
         // One-to-many relation with CartItems  
         public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();

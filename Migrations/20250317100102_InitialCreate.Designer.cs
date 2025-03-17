@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commerce.Migrations
 {
     [DbContext(typeof(SqldbContext))]
-    [Migration("20250311070610_First")]
-    partial class First
+    [Migration("20250317100102_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -134,9 +134,6 @@ namespace E_Commerce.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Orderquantity")
-                        .HasColumnType("int");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -153,6 +150,30 @@ namespace E_Commerce.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.OrderProduct", b =>
+                {
+                    b.Property<Guid>("OrderProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderProductId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProduct");
                 });
 
             modelBuilder.Entity("E_Commerce.Models.DomainModel.Product", b =>
@@ -313,6 +334,25 @@ namespace E_Commerce.Migrations
                     b.Navigation("user");
                 });
 
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.OrderProduct", b =>
+                {
+                    b.HasOne("E_Commerce.Models.DomainModel.Order", "order")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("E_Commerce.Models.DomainModel.Product", "product")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("order");
+
+                    b.Navigation("product");
+                });
+
             modelBuilder.Entity("E_Commerce.Models.DomainModel.Product", b =>
                 {
                     b.HasOne("E_Commerce.Models.DomainModel.User", "Seller")
@@ -342,9 +382,16 @@ namespace E_Commerce.Migrations
                     b.Navigation("Orders");
                 });
 
+            modelBuilder.Entity("E_Commerce.Models.DomainModel.Order", b =>
+                {
+                    b.Navigation("OrderProducts");
+                });
+
             modelBuilder.Entity("E_Commerce.Models.DomainModel.Product", b =>
                 {
                     b.Navigation("CartItems");
+
+                    b.Navigation("OrderProducts");
                 });
 
             modelBuilder.Entity("E_Commerce.Models.DomainModel.User", b =>

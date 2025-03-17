@@ -17,6 +17,8 @@ public class SqldbContext : DbContext
     public DbSet<CartItem> CartItems {get; set;}
     public DbSet<Address> Addresses { get; set;}
     public DbSet<Review>Reviews { get; set;}
+    public DbSet<OrderProduct> OrderProducts { get; set; }
+
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -44,6 +46,10 @@ public class SqldbContext : DbContext
             .HasForeignKey(ci => ci.CartId)
             .OnDelete(DeleteBehavior.NoAction);
 
+
+        modelBuilder.Entity<CartItem>()
+            .HasKey(ci => ci.CartItemId);
+
         // One Product can have many CartItems (One-to-many)
         modelBuilder.Entity<Product>()
             .HasMany(p => p.CartItems)
@@ -70,5 +76,33 @@ public class SqldbContext : DbContext
             .WithOne(u => u.user)         // And the User is one
             .HasForeignKey(u => u.UserId)  // ForeignKey from Review to User
               .OnDelete(DeleteBehavior.NoAction);
+
+
+        modelBuilder.Entity<OrderProduct>()
+            .HasKey(op => op.OrderProductId);
+
+        modelBuilder.Entity<OrderProduct>()
+            .HasOne(op => op.order)
+            .WithMany(o => o.OrderProducts) //has many
+            .HasForeignKey(op => op.OrderId);
+
+
+
+
+
+
+        modelBuilder.Entity<Order>()
+    .HasOne(o => o.Address)   // One Order has One Address
+    .WithMany()  // No navigation property needed in Address
+    .HasForeignKey(o => o.AddressId) // Foreign key in Order
+    .OnDelete(DeleteBehavior.NoAction);  // Prevent cascade delete issues
+
+
+
+
+        modelBuilder.Entity<OrderProduct>()
+            .HasOne(op => op.product)
+            .WithMany(p => p.OrderProducts)             //same product can be in many orders
+                .HasForeignKey(op => op.ProductId);
     }
 }             

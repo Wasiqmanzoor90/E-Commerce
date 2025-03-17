@@ -27,5 +27,8 @@ namespace E_Commerce.Models.DomainModel
         public User? Seller { get; set; }
 
 
+        public ICollection<OrderProduct> OrderProducts { get; set; } = [];
+
+
     }
 }

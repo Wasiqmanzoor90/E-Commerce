@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Metadata;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Razorpay.Api;
+using Product = E_Commerce.Models.DomainModel.Product;
 
 namespace E_Commerce.Controllers;
 
@@ -305,7 +307,7 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
 
 
     [HttpGet]
-    public IActionResult AddressUi()
+    public IActionResult AddressUi(Guid orderId)
     {
         var user = HttpContext.Items["User"] as User;
         if (user == null)
@@ -314,7 +316,7 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         }
 
         var addressList = _dbcontext.Addresses.Where(a => a.UserId == user.UserId).ToList();
-
+        ViewBag.OrderId = orderId; // ✅ FIXED: Pass OrderId correctly
         return View(addressList); // ✅ Ensure addresses are passed to the view
     }
 

@@ -3,7 +3,8 @@
     <div class="container mt-4 my-5" style="margin-bottom: 60px; height: 90vh;">
     <h2>Your Addresses</h2>
 
-    <form method="post" asp-action="Addaddress" asp-controller="User" id="addressForm">
+    <form method="post" asp-action="Create" asp-controller="Order">
+        <input type="hidden" name="OrderId" value="@ViewBag.OrderId" />
 
         <table class="table">
             <thead>
@@ -22,7 +23,7 @@
                 {
                     <tr>
                         <td>
-                            <input type="radio" name="selectedAddressId" value="@address.AddressId" class="address-radio">
+                            <input type="radio" name="selectedAddressId" value="@address.AddressId" required class="address-radio">
                         </td>
                         <td>@address.Street1, @address.Street2</td>
                         <td>@address.District</td>
@@ -35,9 +36,12 @@
             </tbody>
         </table>
 
-        <!-- Proceed to Checkout Button -->
-        <button type="submit" class="btn btn-success mt-3" id="checkoutButton" disabled>✔ Proceed to Checkout</button>
+        <!-- ✅ Replace `<a>` with a `Submit` Button -->
+        <button type="submit" id="checkoutButton" class="btn btn-black btn-sm py-3 btn-block" disabled>
+            Place Order
+        </button>
     </form>
+
 
     <!-- Add New Address Button -->
     <button class="btn btn-primary mt-4" onclick="openModal()">➕ Add New Address</button>
@@ -49,6 +53,19 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <h3>Add New Address</h3>
         <form method="post" asp-action="Addaddress" asp-controller="User" id="addressForm">
+
+
+            <div class="mb-3">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" name="FirstName" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="LastName">
+            </div>
+
+
+
             <div class="mb-3">
                 <label class="form-label">Street 1</label>
                 <input type="text" class="form-control" name="Street1" required>

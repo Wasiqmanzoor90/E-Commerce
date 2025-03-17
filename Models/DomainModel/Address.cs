@@ -7,6 +7,9 @@ namespace E_Commerce.Models.DomainModel
     {
         [Key]
         public Guid AddressId { get; set; }
+        public required string FirstName {  get; set; }
+        public required string LastName { get; set; }
+
         public required string Street1 { get; set; }
         public required string Street2 { get; set; }
         public required string District { get; set; }
@@ -19,6 +22,9 @@ namespace E_Commerce.Models.DomainModel
         public required Guid UserId { get; set; }
         [ForeignKey("UserId")]
         public User? User { get; set; }
+
+        public ICollection<Order> orders { get; set; } = [];
+
 
     }
 }

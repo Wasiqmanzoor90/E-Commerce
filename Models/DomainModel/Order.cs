@@ -8,8 +8,8 @@ namespace E_Commerce.Models.DomainModel
     {
         [Key]
         public Guid OrderId { get; set; }
-        public required int Orderquantity { get; set; }
         public Status Status { get; set; } // Add this property
+        public int OrderPrice { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
 
@@ -26,6 +26,15 @@ namespace E_Commerce.Models.DomainModel
         // Navigation property to the User model
         [ForeignKey("UserId")]
         public User? user { get; set; }
+
+
+
+        public Guid AddressId { get; set; }
+        [ForeignKey("AddressId")]
+        public Address? Address { get; set; }
+
+
+        public ICollection<OrderProduct> OrderProducts { get; set; } = [];
 
 
     }
