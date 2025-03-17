@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "E_Commerce.Controllers.PaymentModel",
+        "Type": "E_Commerce.Models.ViewModel.PaymentModel",
         "IsRequired": true
       }
     ],

@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Data;
 using E_Commerce.Interface;
 using E_Commerce.Models.DomainModel;
+using E_Commerce.Models.JunctionModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

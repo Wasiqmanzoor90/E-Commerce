@@ -1,4 +1,4 @@
-namespace E_Commerce.Models
+﻿namespace E_Commerce.Models
 {
     public class ErrorViewModel
     {
@@ -7,3 +7,4 @@ namespace E_Commerce.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
+

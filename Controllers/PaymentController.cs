@@ -1,5 +1,6 @@
 ﻿using E_Commerce.Data;
 using E_Commerce.Interface;
+using E_Commerce.Models.ViewModel;
 using E_Commerce.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -33,8 +34,6 @@ namespace E_Commerce.Controllers
 
                 return Ok(new
                 {
-
-
                     orderId = order["id"].ToString(),
                     entity = order["entity"].ToString(),
                     amount = order["amount"],
@@ -64,10 +63,5 @@ namespace E_Commerce.Controllers
 
 
 
-    public class PaymentModel
-    {
-        public int Amount { get; set; }
-        public string? Currency { get; set; }
-        public Guid OrderId { get; set; }
-    }
+
 }

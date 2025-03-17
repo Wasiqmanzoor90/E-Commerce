@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Data;
 using E_Commerce.Interface;
 using E_Commerce.Models.DomainModel;
+using E_Commerce.Models.JunctionModel;
 using E_Commerce.Types;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,15 @@ namespace E_Commerce.Controllers
         private readonly IJasonToken _jasonToken = jasonToken;
 
 
+        [HttpGet, HttpPost]
+        public IActionResult PaymentSuccess()
+        {
+            return View();
+        }
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(Guid orderId, Guid selectedAddressId)
+        public async Task<IActionResult> Create(Guid orderId, Guid GetAddressId)
         {
             var user = HttpContext.Items["User"] as User;
             if (user == null)
@@ -25,62 +31,57 @@ namespace E_Commerce.Controllers
             }
 
             var cart = await dbcontext.Carts
-                .Include(c => c.CartItems)
-                .ThenInclude(cp => cp.Product)
-                .FirstOrDefaultAsync(c => c.UserId == user.UserId);
-
+                .Include(ci => ci.CartItems)
+                .ThenInclude(p => p.Product)
+                .FirstOrDefaultAsync(u => u.UserId == user.UserId);
             if (cart == null || cart.CartItems.Count == 0)
             {
                 ViewBag.errorMessage = "Your Cart is empty! Proceed Directly to the orders section.";
                 return View();
             }
 
-            // 🔹 Ensure Address Exists
-            var addressExists = await dbcontext.Addresses.AnyAsync(a => a.AddressId == selectedAddressId && a.UserId == user.UserId);
-            if (!addressExists)
-            {
-                return BadRequest("Selected address does not exist.");
-            }
 
-            // Convert CartItems to OrderProducts
-            var orderProducts = cart.CartItems.Select(cp => new OrderProduct
+            var addressExists = await dbcontext.Addresses.AnyAsync(a => a.AddressId == GetAddressId && a.UserId == user.UserId);
+               if (!addressExists)
+                {
+                    return BadRequest("Selected address does not exist.");
+              }
+
+
+            //In short, this links the order with the items that were in the cart
+            var orderproduct = cart.CartItems.Select(cp => new OrderProduct
             {
-                ProductId = cp.ProductId,
-                Quantity = cp.Quantity
-            }).ToList();
+                ProductId = cp.ProductId, //Extract ProductId from the cart item
+                Quantity = cp.Quantity,   //Extract Quantity from the cart item
+            }).ToList(); //Convert the result into a List of OrderProduct);
+
 
             var order = new Order
             {
-                Status = Status.Pending,
-                OrderPrice = (int)cart.Totalprice,
-                UserId = user.UserId,
-                CartId = cart.CartId,
-                AddressId = selectedAddressId, // ✅ Assign valid AddressId
-                OrderProducts = orderProducts
+                Status = Status.Pending,    //Set initial order status to Pending (waiting for payment)
+                OrderPrice = (int)cart.Totalprice,//Assign total cart price as the order price
+                UserId = user.UserId,       //Link the order to the current user
+                CartId = cart.CartId,       //Store the cart ID for reference
+                AddressId = GetAddressId,      // Assign selected shipping address
+                OrderProducts = orderproduct //Link the order with the converted cart items
             };
+
 
             await dbcontext.Orders.AddAsync(order);
             dbcontext.CartItems.RemoveRange(cart.CartItems);
             cart.Totalprice = 0;
             await dbcontext.SaveChangesAsync();
-
             return RedirectToAction("Payment", new { orderId = order.OrderId });
+
+
+
         }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-        [HttpGet]
+            [HttpGet]
         public async Task<IActionResult> Payment(Guid orderId)
         {
             var user = HttpContext.Items["User"] as User;
@@ -91,8 +92,8 @@ namespace E_Commerce.Controllers
 
             var order = await dbcontext.Orders
                 .Include(o => o.OrderProducts)
-                .ThenInclude(op => op.product) // ✅ Ensure Product details are included
-                .Include(o => o.Address) // ✅ FIXED: Ensure Address is included
+                .ThenInclude(op => op.product) //Ensure Product details are included
+                .Include(o => o.Address) //FIXED: Ensure Address is included
                 .FirstOrDefaultAsync(o => o.OrderId == orderId);
 
             if (order == null || order.OrderProducts.Count == 0)

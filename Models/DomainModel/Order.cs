@@ -1,4 +1,5 @@
-﻿using E_Commerce.Types;
+﻿using E_Commerce.Models.JunctionModel;
+using E_Commerce.Types;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

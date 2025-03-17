@@ -1,4 +1,5 @@
 ﻿using E_Commerce.Models.DomainModel;
+using E_Commerce.Models.JunctionModel;
 using Microsoft.EntityFrameworkCore;
 namespace E_Commerce.Data;
 
