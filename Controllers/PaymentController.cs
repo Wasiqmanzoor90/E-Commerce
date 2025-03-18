@@ -35,16 +35,11 @@ namespace E_Commerce.Controllers
                 return Ok(new
                 {
                     orderId = order["id"].ToString(),
-                    entity = order["entity"].ToString(),
+
                     amount = order["amount"],
-                    amountPaid = order["amount_paid"],
-                    amountDue = order["amount_due"],
+                  
                     currency = order["currency"].ToString(),
-                    receipt = order["receipt"].ToString(),
-                    status = order["status"].ToString(),
-                    attempts = order["attempts"],
-                    createdAt = order["created_at"]
-                });
+                  });
 
 
 

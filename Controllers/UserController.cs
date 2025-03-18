@@ -344,8 +344,6 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
     }
 
 
-
-
     private async Task<IActionResult>Categoryview(string category)
     {
         var buyer = HttpContext.Items["User"] as User; 

@@ -37,14 +37,13 @@
 <script>
 
     async function payNow() {
-          console.log("Button Clicked");
+      
 
           // Get amount from the HTML
           const amountText = document.getElementById('amount').innerText.trim();
-          console.log("Raw Amount Text:", amountText); // ✅ Debugging step
 
           const amount = parseFloat(amountText);
-          console.log("Parsed Amount:", amount); // ✅ Ensure the amount is correct
+     
 
           if (!amount || amount <= 0) {
               alert("Invalid amount");
@@ -76,7 +75,7 @@
               name: 'Wasiq',
               description: 'Test Transaction',
               order_id: order.orderId,
-              callback_url: 'http://localhost:5189/Order/PaymentSuccess',
+              callback_url: `http://localhost:5189/Order/PaymentSuccess?id=${orderId}`,
               prefill: {
                   name: 'Wasiq Manzoor',
                   email: 'wasiqmanzoor90@gmail.com',

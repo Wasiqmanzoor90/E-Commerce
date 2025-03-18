@@ -15,9 +15,34 @@ namespace E_Commerce.Controllers
 
 
         [HttpGet, HttpPost]
-        public IActionResult PaymentSuccess()
+        public async Task <IActionResult> PaymentSuccess(Guid id)
         {
+            var user = HttpContext.Items["User"] as User;
+            if (user == null || user.Role != Role.Buyer)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            // 🔹 Find the order, ensuring it belongs to the logged-in user via Cart
+            var order = await dbcontext.Orders
+                .Include(o => o.cart) // Include Cart to check ownership
+                .FirstOrDefaultAsync(o => o.OrderId == id);
+
+
+            if (order == null)
+            {
+                return NotFound("Order not found or unauthorized access.");
+            }
+
+            if (order.Status != Status.PaymentDone)
+            {
+                order.Status = Status.PaymentDone;
+                order.UpdatedAt = DateTime.UtcNow;
+                await dbcontext.SaveChangesAsync();
+            }
+
             return View();
+           
+          
         }
 
 
@@ -71,7 +96,8 @@ namespace E_Commerce.Controllers
             dbcontext.CartItems.RemoveRange(cart.CartItems);
             cart.Totalprice = 0;
             await dbcontext.SaveChangesAsync();
-            return RedirectToAction("Payment", new { orderId = order.OrderId });
+            return RedirectToAction("Payment", "Order", new { orderId = order.OrderId });
+
 
 
 
@@ -81,7 +107,7 @@ namespace E_Commerce.Controllers
 
 
 
-            [HttpGet]
+        [HttpGet]
         public async Task<IActionResult> Payment(Guid orderId)
         {
             var user = HttpContext.Items["User"] as User;
@@ -103,6 +129,8 @@ namespace E_Commerce.Controllers
 
             ViewBag.OrderProducts = order.OrderProducts;
             ViewBag.Order = order;
+            ViewBag.OrderId = order.OrderId;
+
             ViewBag.Address = order.Address;
 
             return View(order); // ✅ Pass order model to the view
