@@ -6,7 +6,9 @@ using E_Commerce.Types;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Razorpay.Api;
 using static System.Net.Mime.MediaTypeNames;
+using Product = E_Commerce.Models.DomainModel.Product;
 
 namespace E_Commerce.Controllers
 {
@@ -190,6 +192,29 @@ namespace E_Commerce.Controllers
             }
             return RedirectToAction("IsDeleted");
 
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> OrderProduct()
+        {
+            var user = HttpContext.Items["User"] as User;
+            if(user == null || user.Role != Role.Seller)
+            {
+                return RedirectToAction("Login", "User");
+
+            }
+
+            Console.WriteLine($"Logged-in UserId: {user.UserId}"); // Debugging
+            ViewBag.UserId = user.UserId;
+            // Fetch orders where payment is completed
+            var order = await _dbcontext.Orders
+                     .Include(o => o.OrderProducts)
+                     .ThenInclude(p => p.product)
+                     .Include(o => o.Address)
+                     .Where(o => o.UserId == user.UserId && o.Status == Status.PaymentDone).ToListAsync();
+            Console.WriteLine($"Orders Count: {order.Count}"); // Debugging
+            return View(order);
         }
     }
 }

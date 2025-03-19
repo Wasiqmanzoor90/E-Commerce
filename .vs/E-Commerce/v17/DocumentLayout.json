@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\models\\junctionmodel\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:models\\junctionmodel\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\models\\domainmodel\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:models\\domainmodel\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\models\\domainmodel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:models\\domainmodel\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\views\\product\\orderproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:views\\product\\orderproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|c:\\users\\admin\\source\\repos\\dotnet projects\\e-commerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27B7E709-2E11-4F80-BA00-B5B3C0AC5A14}|E-Commerce.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,26 +50,91 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Models\\DomainModel\\User.cs",
+              "RelativeDocumentMoniker": "Models\\DomainModel\\User.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Models\\DomainModel\\User.cs",
+              "RelativeToolTip": "Models\\DomainModel\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T06:12:21.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderProduct.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Models\\JunctionModel\\OrderProduct.cs",
+              "RelativeDocumentMoniker": "Models\\JunctionModel\\OrderProduct.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Models\\JunctionModel\\OrderProduct.cs",
+              "RelativeToolTip": "Models\\JunctionModel\\OrderProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T05:57:02.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Models\\DomainModel\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\DomainModel\\Order.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Models\\DomainModel\\Order.cs",
+              "RelativeToolTip": "Models\\DomainModel\\Order.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAACAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T05:56:52.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Product\\OrderProduct.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\OrderProduct.cshtml",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Views\\Product\\OrderProduct.cshtml",
+              "RelativeToolTip": "Views\\Product\\OrderProduct.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T05:23:33.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAxwNIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T05:07:57.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
               "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\OrderController.cs",
               "RelativeToolTip": "Controllers\\OrderController.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAwwFIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T17:02:44.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
               "ToolTip": "C:\\Users\\admin\\source\\repos\\Dotnet projects\\E-Commerce\\Controllers\\PaymentController.cs",
               "RelativeToolTip": "Controllers\\PaymentController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAACQAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAACQAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T16:54:49.873Z",
               "EditorCaption": ""

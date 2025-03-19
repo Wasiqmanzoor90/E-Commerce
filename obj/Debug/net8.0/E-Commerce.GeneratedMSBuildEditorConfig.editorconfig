@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJc0RlbGV0ZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/Product/OrderProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxPcmRlclByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/Product/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
