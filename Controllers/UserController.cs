@@ -142,14 +142,14 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
 
 
 
-  
+
 
 
     [HttpGet]
     public IActionResult UserProfile()
     {
         var user = HttpContext.Items["User"] as User;
-        if(user == null)
+        if (user == null)
         {
             return RedirectToAction("Login", "User");
         }
@@ -232,7 +232,7 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
 
     }
 
-    
+
     [HttpGet]
     public async Task<IActionResult> BuyerUi(Product product)
     {
@@ -344,10 +344,10 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
     }
 
 
-    private async Task<IActionResult>Categoryview(string category)
+    private async Task<IActionResult> Categoryview(string category)
     {
-        var buyer = HttpContext.Items["User"] as User; 
-        if (buyer == null|| buyer.Role != Types.Role.Buyer)
+        var buyer = HttpContext.Items["User"] as User;
+        if (buyer == null || buyer.Role != Types.Role.Buyer)
         {
             return RedirectToAction("Index", "Home");
         }
@@ -366,7 +366,31 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
     [HttpGet]
     public Task<IActionResult> KidUi() => Categoryview("kid");
 
+    [HttpGet]
+    public Task<IActionResult> Home() => Categoryview("home");
 
+    [HttpGet]
+    public Task<IActionResult> Sale() => Categoryview("sale");
+
+
+    [HttpGet]
+    public async Task<IActionResult> TrackOrder()
+    {
+        var user = HttpContext.Items["User"] as User;
+        if (user == null || user.Role != Types.Role.Buyer)
+        {
+            return RedirectToAction("Login", "User");
+        }
+        var order = await _dbcontext.Orders
+            .Include(o => o.OrderProducts)
+            .ThenInclude(p => p.product)
+            .Include(o => o.Address)
+            .Where(u => u.UserId == user.UserId)
+            .ToListAsync();
+        return View(order);
+
+
+    }
 }
 
 

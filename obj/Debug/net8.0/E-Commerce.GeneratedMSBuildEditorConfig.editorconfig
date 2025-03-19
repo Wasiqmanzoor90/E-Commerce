@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcUGF5bWVudFN1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/Product/DispatchedProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEaXNwYXRjaGVkUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/Product/IsArcheive.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJc0FyY2hlaXZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -100,6 +104,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/User/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/User/KidUi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxLaWRVaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/User/LadiesUi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMYWRpZXNVaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -118,6 +130,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/User/Sale.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTYWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/User/TrackOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxUcmFja09yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/source/repos/Dotnet projects/E-Commerce/Views/User/UserProfile.cshtml]

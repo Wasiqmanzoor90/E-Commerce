@@ -199,13 +199,11 @@ namespace E_Commerce.Controllers
         public async Task<IActionResult> OrderProduct()
         {
             var user = HttpContext.Items["User"] as User;
-            if(user == null || user.Role != Role.Seller)
+            if (user == null || user.Role != Role.Seller)
             {
                 return RedirectToAction("Login", "User");
 
             }
-
-            Console.WriteLine($"Logged-in UserId: {user.UserId}"); // Debugging
             ViewBag.UserId = user.UserId;
             // Fetch orders where payment is completed
             var order = await _dbcontext.Orders
@@ -213,8 +211,43 @@ namespace E_Commerce.Controllers
                      .ThenInclude(p => p.product)
                      .Include(o => o.Address)
                      .Where(o => o.UserId == user.UserId && o.Status == Status.PaymentDone).ToListAsync();
-            Console.WriteLine($"Orders Count: {order.Count}"); // Debugging
             return View(order);
         }
+
+        [HttpPost]
+        public async Task<IActionResult>Dispatch(Guid id)
+        {
+            var order = await _dbcontext.Orders.FindAsync(id);
+            if (order == null)
+            {
+                return RedirectToAction("Login", "User");
+                
+            }
+            if(order.Status != Status.Dispatched)
+            {
+                order.Status = Status.Dispatched;
+                await _dbcontext.SaveChangesAsync();
+            }
+            return View("SellerUi");
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult>DispatchedProduct()
+        {
+             var user = HttpContext.Items["User"]as User;
+            if(user == null || user.Role != Role.Seller)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            var order = await _dbcontext.Orders
+                .Include(o => o.OrderProducts)
+                .ThenInclude(p => p.product)
+                .Include(o => o.Address)
+                .Where(o => o.UserId == user.UserId && o.Status == Status.Dispatched)
+                .ToListAsync();
+            return View(order);
+        }
+        
     }
 }

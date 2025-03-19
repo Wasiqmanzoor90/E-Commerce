@@ -10,7 +10,7 @@
             {
                 <div class="col-md-4 mb-3">
                     <div class="card shadow-sm">
-                        <img src="@item.Product.ProductPicUrl" class="card-img-top" alt="@item.Product.ProductName"
+                        <img src="@item.Product?.ProductPicUrl" class="card-img-top" alt="@item.Product.ProductName"
                              style="height: 200px; object-fit: cover;">
 
                         <div class="card-body">
@@ -84,14 +84,14 @@
                                 <span class="text-black">Total</span>
                             </div>
                             <div class="col-6 text-right">
-                                <strong>Total: $@(Model?.CartItems.Sum(i => i.Price))</strong>
+                                <strong>Total: ₹@(Model?.CartItems.Sum(i => i.Price))</strong>
                             </div>
                         </div>
 
                         <div class="row">
 
                                 <form class="col-md-12" method="get" asp-action="AddressUi" asp-controller="User">
-                                    <button class="btn btn-black btn-lg py-3 btn-block" @(Model.CartItems == null || !Model.CartItems.Any() ? "disabled" : "")>Place Order</button>
+                                    <button class="btn btn-black btn-lg py-3 btn-block" @(Model?.CartItems == null || !Model.CartItems.Any() ? "disabled" : "")>Place Order</button>
                                 </form>
                         </div>
 
@@ -110,5 +110,7 @@
         <p class="text-muted">Your cart is empty.</p>
     }
   
-
+    <form method="get" asp-controller="User" asp-action="TrackOrder">
+        <button class="btn btn-dark">Track Order</button>
+    </form>
 </div>
