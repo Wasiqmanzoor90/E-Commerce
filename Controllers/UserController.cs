@@ -233,6 +233,7 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
     }
 
 
+
     [HttpGet]
     public async Task<IActionResult> BuyerUi(Product product)
     {

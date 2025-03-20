@@ -6,7 +6,20 @@
             <li class="nav-item" style="font-size: 0.7rem; padding: 10px 45px;">Free shipping above ₹1999</li>
             <li class="nav-item" style="font-size: 0.7rem; padding: 10px 45px;">Free & flexible 15 days return</li>
             <li class="nav-item" style="font-size: 0.7rem; padding: 10px 45px;">Estimated delivery time: 2-7 days</li>
+           
         </ul>
+        <form asp-action="Search" asp-controller="Home" method="get" class="form-group mb-3 position-relative">
+            <input type="text" name="query" class="form-control"
+                   style="border:1px solid; border-radius:12px;background-color:#FAF9F8; padding-right: 40px;"
+                   placeholder="Search..." />
+
+            <!-- Search Icon as Clickable Button -->
+            <button type="submit" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+                                 border: none; background: none; cursor: pointer;">
+                <i class="fas fa-search" style="color: #888;"></i>
+            </button>
+        </form>
+
     </div>
 </div>
 

@@ -48,10 +48,8 @@ namespace E_Commerce.Service;
 
         public Guid VerifyToken(string token)
         {
-
         try
         {
-
             var tokenhandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_secretkey);
             var validtoken = new TokenValidationParameters()

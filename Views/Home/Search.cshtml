@@ -18,7 +18,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">@product.ProductName</h5>
                                 <p class="card-text"><strong>Price:</strong> ₹@product.ProductPrice</p>
-                              
+
                             </div>
                         </div>
                     </a>
@@ -26,24 +26,24 @@
                         <div class="input-group mb-2">
                             <!-- Quantity Input -->
                             <input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="@product.ProductQuantity" required>
-                            
+
                         </div>
 
                         <!-- Buttons -->
                         <div class="d-flex gap-2">
                             <button type="submit" class="btn-cart flex-grow-1">Add to Cart</button>
-                           
+
                         </div>
                     </form>
                 </div>
-               
+
             }
         }
         else
         {
             <p>No products available.</p>
 
-         
+
         }
     </div>
 </div>
