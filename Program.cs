@@ -3,6 +3,7 @@ using E_Commerce.Interface;
 using E_Commerce.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -23,8 +24,19 @@ builder.Services.AddDbContext<SqldbContext>(options =>
 
 builder.Services.AddScoped<IJasonToken, JasonTokenServicecs>();
 builder.Services.AddScoped<ICloudinaryInterface, CloudnaryService>();
+builder.Services.AddCors(Options =>
+{
+    Options.AddPolicy("AllowAll", policy=> policy.WithOrigins("http://localhost:3000")
+    .AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+});
 
 
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
 
 
 var app = builder.Build();
@@ -36,7 +48,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseCors("AllowAll");
 app.UseSession(); // ✅ Session middleware
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -49,5 +63,7 @@ app.UseMiddleware<TokenMiddleware>(); // ✅ Move TokenMiddleware after authenti
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
 
 app.Run();

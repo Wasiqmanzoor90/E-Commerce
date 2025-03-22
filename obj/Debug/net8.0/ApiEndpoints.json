@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "E_Commerce.Controllers.AdminController",
+    "Method": "Admin",
+    "RelativePath": "api/Admin/Dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce.Controllers.PaymentController",
     "Method": "CreateIntent",
     "RelativePath": "api/Payment/create-intent",
