@@ -17,9 +17,9 @@ function Admin() {
     }, []);
     return (
         <div className="container my-5" >
-            <h2 className='mb-2'>Admin Panel</h2>
-            <h3 className='mt-4'>Orders</h3>
-            <table className='table table-striped table-hover'>
+          
+            <h3 className='mt-4 mb-3'>Orders</h3>
+            <table className='table table-bordered'>
                 <thead>
                     <tr>
 
@@ -55,8 +55,8 @@ function Admin() {
 
 
 
-            <h3 className='mt-4'>Cart items</h3>
-            <table className='table table-striped table-hover'>
+            <h3 className='mt-4 mb-3'>Cart items</h3>
+            <table className='table table-bordered'>
                 <thead>
                     <tr>
                         <th>CartId</th>
