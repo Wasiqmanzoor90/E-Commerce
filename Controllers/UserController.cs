@@ -28,7 +28,6 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Register([Bind("Name, Email, Password, Role,ProfilePictureUrl")] User user)
     {
         try
@@ -137,13 +136,6 @@ public class UserController(SqldbContext dbcontext, IJasonToken jtoken) : Contro
         }
 
     }
-
-
-
-
-
-
-
 
     [HttpGet]
     public IActionResult UserProfile()

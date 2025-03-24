@@ -3,11 +3,8 @@ using E_Commerce.Data;
 using E_Commerce.Interface;
 using E_Commerce.Models.DomainModel;
 using E_Commerce.Types;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Razorpay.Api;
-using static System.Net.Mime.MediaTypeNames;
 using Product = E_Commerce.Models.DomainModel.Product;
 
 namespace E_Commerce.Controllers

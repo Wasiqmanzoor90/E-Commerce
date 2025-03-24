@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Data;
 using E_Commerce.Models.DomainModel;
 using E_Commerce.Models.JunctionModel;
+using E_Commerce.Types;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +35,7 @@ namespace E_Commerce.Controllers
                 
                 CartItem = c.CartItems.Select(p => new {
 
-                    p.CartItemId,  // ✅ Corrected: Fetching CartItemId from CartItems
+                    p.CartItemId,  //Corrected: Fetching CartItemId from CartItems
                     p.Quantity,
 
 
@@ -74,9 +75,68 @@ namespace E_Commerce.Controllers
 
 
                 }).ToArrayAsync();
+
+
+
+
+
+
+
+            var Buyer = await _dbcontext.Users.Where(b => b.Role == Role.Buyer).Select(b => new
+            {
+                b.Email,
+                b.Name,
+                b.Role,
+                Address = b.Addresses.Select(adr => new
+                {
+                    adr.Phone,
+                    adr.State
+
+                }).ToList()
+
+            }).ToListAsync();
+
+
+
+
+
+
+            var Seller = await _dbcontext.Users.
+                Where(a => a.Role == Role.Seller).Select(a => new
+
+                {
+                    a.Name,
+                    a.Email,
+                    a.Role,
+                    Address = a.Addresses.Select(ad => new
+                    {
+                        ad.Pincode,
+                        ad.State,
+                    }).ToList()
+
+
+                }).ToListAsync();
+
+
+
+
+            var prod = await _dbcontext.Users.Where(us=> us.Role == Role.Seller  || us.Role ==Role.Buyer).Select(us => new
+            {
+                us.Name,
+                Product = us.Products.Select(pa=> new 
+                {
+                    pa.ProductName,
+                    pa.ProductQuantity,
+                    pa.Category,
+                    pa.ProductPrice
+                }).ToList()
+            }).ToListAsync();
+
+
+
            
 
-            return Ok(new { Cart = cart, Orders = orders });
+            return Ok(new { Cart = cart, Orders = orders , User = Seller, Buyers =Buyer, Prod=prod});
         }
 
     }
