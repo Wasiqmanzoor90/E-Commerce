@@ -1,5 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
+
+
+
+
+
 
 function Product() {
   const [productp, setProduct] = useState([]);
@@ -21,8 +28,9 @@ function Product() {
   }, []);
 
   return (
-    <div className="container my-3">
-      <table className="table table-bordered">
+    <div className="Container my-5 mx-3">
+    <h3 className=' mt-3'>Product List</h3>
+    <table className='table table-bordered table-hover mt-1'>
         <thead>
           <tr>
             <th>Seller Name</th>

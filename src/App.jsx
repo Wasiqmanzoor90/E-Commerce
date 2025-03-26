@@ -13,8 +13,9 @@ import Product from "./Product";
 function App() {
   return (
 <BrowserRouter>
-<Nav/>
+
 <Routes>
+  <Route path="/" element={<Nav/>} />
 <Route path="/Admin" element ={<Admin/>}/>
 <Route path="/User" element ={<User/>}/>
 <Route path="/Seller" element ={<Seller/>}/>

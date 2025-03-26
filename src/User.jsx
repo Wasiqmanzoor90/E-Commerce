@@ -23,9 +23,9 @@ function User() {
   }, []);
 
   return (
-    <div className="Container mx-3 my-2">
-      <h3 className=' mb-3'>User List</h3>
-      <table className='table table-bordered'>
+    <div className="Container my-5 mx-3">
+      <h3 className=' mt-3'>User List</h3>
+      <table className='table table-bordered table-hover mt-1'>
         <thead>
           <tr>
             <th>Email</th>
@@ -59,6 +59,7 @@ function User() {
       </table>
 
     </div>
+    
   )
 }
 
